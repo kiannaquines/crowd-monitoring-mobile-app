@@ -11,14 +11,33 @@ class NavigationMenu extends StatefulWidget {
 class _NavigationMenuState extends State<NavigationMenu> {
   @override
   Widget build(BuildContext context) {
+    int currentPageIndex = 0;
+
     return NavigationBar(
-        selectedIndex: 0,
-        destinations: const [
-          NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Iconsax.chart), label: 'Sections'),
-          NavigationDestination(icon: Icon(Iconsax.heart), label: 'Favorate'),
-          NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
-        ],
+      selectedIndex: currentPageIndex,
+      onDestinationSelected: (int pageIndex) => {
+        setState(() {
+          currentPageIndex = pageIndex;
+        })
+      },
+      destinations: const [
+        NavigationDestination(
+          icon: Icon(Iconsax.home),
+          label: 'Home',
+        ),
+        NavigationDestination(
+          icon: Icon(Iconsax.chart),
+          label: 'Sections',
+        ),
+        NavigationDestination(
+          icon: Icon(Iconsax.heart),
+          label: 'Favorate',
+        ),
+        NavigationDestination(
+          icon: Icon(Iconsax.user),
+          label: 'Profile',
+        ),
+      ],
     );
   }
 }

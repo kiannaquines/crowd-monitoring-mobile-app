@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/dashboard_screen.dart';
+import 'screens/main_screen.dart';
 
 void main() {
   runApp(const CrowdMonitoring());
@@ -14,13 +14,14 @@ class CrowdMonitoring extends StatelessWidget {
       title: 'CrowdPulse',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple,
-            brightness: Brightness.dark,
-          ),
-          useMaterial3: true,
-          fontFamily: 'Geist'),
-      home: const DashboardScreen(title: 'Dashboard Screen'),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
+        fontFamily: 'Geist',
+      ),
+      home: const MainScreen(title: 'Dashboard Screen'),
     );
   }
 }
