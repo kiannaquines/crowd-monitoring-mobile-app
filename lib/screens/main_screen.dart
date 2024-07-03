@@ -5,7 +5,6 @@ import 'package:crowd/screens/section_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/includes/bottom_navigation_bar.dart';
 import 'package:crowd/includes/top_navigation_bar.dart';
-import 'package:crowd/screens/login_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key, required this.title});
