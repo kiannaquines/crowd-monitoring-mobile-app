@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:crowd/includes/navigation_bar.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key, required this.title});
@@ -11,10 +12,10 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Center(
-        child: Text(widget.title),
-      ),
+    return const Material(
+      child: Scaffold(
+        bottomNavigationBar: NavigationMenu(),
+      )
     );
   }
 }

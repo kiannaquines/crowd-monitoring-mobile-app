@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({super.key});
@@ -12,10 +13,10 @@ class _NavigationMenuState extends State<NavigationMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        selectedIndex: 0,
+        selectedIndex: 1,
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.dashboard), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.dashboard), label: 'Section'),
+          NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
         ],
       ),
     );
