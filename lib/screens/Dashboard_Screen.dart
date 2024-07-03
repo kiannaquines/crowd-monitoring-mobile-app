@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:crowd/includes/navigation_bar.dart';
-import 'package:crowd/includes/header_navigation.dart';
+import 'package:crowd/includes/bottom_navigation_bar.dart';
+import 'package:crowd/includes/top_navigation_bar.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key, required this.title});
@@ -14,14 +14,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        title: const Text('Good evening!'),
-      ),
-      body: Container(
-        child: Center(
-          child: Text(widget.title),
-        ),
+      appBar: const HeaderNavigation(title: 'Good evening!',full_name: 'Kian Naquines, 🌙',),
+      body: Center(
+        child: Text(widget.title),
       ),
       bottomNavigationBar: const NavigationMenu(),
     );

@@ -14,9 +14,12 @@ class MyApp extends StatelessWidget {
       title: 'CrowdPulse',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.deepPurple,
+            brightness: Brightness.dark,
+          ),
+          useMaterial3: true,
+          fontFamily: 'Geist'),
       home: const DashboardScreen(title: 'Dashboard Screen'),
     );
   }
