@@ -1,6 +1,8 @@
+import 'package:crowd/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/includes/bottom_navigation_bar.dart';
 import 'package:crowd/includes/top_navigation_bar.dart';
+import 'package:crowd/screens/login_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key, required this.title});
@@ -13,15 +15,13 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const HeaderNavigation(
+    return const Scaffold(
+      appBar:  HeaderNavigation(
         title: 'Good evening!',
         fullName: 'Kian Naquines, 🌙',
       ),
-      body: Center(
-        child: Text(widget.title),
-      ),
-      bottomNavigationBar: const NavigationMenu(),
+      body: LoginScreen(title: 'Login Screen',),
+      bottomNavigationBar:  NavigationMenu(),
     );
   }
 }
