@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'screens/dashboard_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CrowdMonitoring());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class CrowdMonitoring extends StatelessWidget {
+  const CrowdMonitoring({super.key});
 
   @override
   Widget build(BuildContext context) {
