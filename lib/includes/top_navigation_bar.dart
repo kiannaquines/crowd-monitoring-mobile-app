@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:crowd/utils/colors.dart';
 
 class HeaderNavigation extends StatefulWidget implements PreferredSizeWidget {
   const HeaderNavigation(
@@ -27,12 +28,14 @@ class _HeaderNavigationState extends State<HeaderNavigation> {
             style: const TextStyle(
               fontSize: 12.0,
               fontWeight: FontWeight.w300,
+              color: Colors.white,
             ),
           ),
           Text(
             widget.title,
-            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18.0),
-          ),
+            style: const TextStyle(
+                fontWeight: FontWeight.w500, fontSize: 18.0),
+          )
         ],
       ),
       actions: <Widget>[
