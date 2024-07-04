@@ -29,7 +29,7 @@ class CrowdMonitoring extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Geist',
       ),
-      home: const MainScreen(title: 'Dashboard Screen'),
+      home: const MainScreen(),
     );
   }
 }

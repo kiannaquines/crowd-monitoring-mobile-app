@@ -7,8 +7,7 @@ import 'package:crowd/includes/bottom_navigation_bar.dart';
 import 'package:crowd/includes/top_navigation_bar.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key, required this.title});
-  final String title;
+  const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();

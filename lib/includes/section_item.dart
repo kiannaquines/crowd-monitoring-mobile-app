@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class SectionItem extends StatefulWidget {
-  const SectionItem({super.key, required this.sectionName, required this.sectionImage, required this.sectionDescription});
+  const SectionItem(
+      {super.key,
+      required this.sectionName,
+      required this.sectionImage,
+      required this.sectionDescription});
   final String sectionName;
   final String sectionImage;
   final String sectionDescription;
@@ -34,6 +39,9 @@ class _SectionItemState extends State<SectionItem> {
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10)),
                 child: Image(
+                  height: 125,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
                   image: AssetImage(
                     widget.sectionImage,
                   ),
@@ -45,6 +53,7 @@ class _SectionItemState extends State<SectionItem> {
               Padding(
                 padding: const EdgeInsets.only(
                   left: 10.0,
+                  right: 10.0,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +66,9 @@ class _SectionItemState extends State<SectionItem> {
                         color: colorScheme.onSurface,
                       ),
                     ),
-                    const SizedBox(height: 5.0,),
+                    const SizedBox(
+                      height: 5.0,
+                    ),
                     Text(
                       widget.sectionDescription,
                       style: TextStyle(
@@ -66,6 +77,23 @@ class _SectionItemState extends State<SectionItem> {
                         color: colorScheme.onPrimaryFixedVariant,
                       ),
                     ),
+                    const SizedBox(
+                      height: 6.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Iconsax.star,
+                          color: colorScheme.onPrimaryContainer,
+                        ),
+                        Icon(
+                          Iconsax.heart,
+                          color: colorScheme.onPrimaryContainer,
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),

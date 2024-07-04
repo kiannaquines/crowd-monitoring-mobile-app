@@ -13,32 +13,38 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Map<String, dynamic>> sectionItems = [
     {
+      'id': 'c896a933-1e11-488b-b5b5-ab6d1f5f4ae5',
       'name': 'Reference Section',
       'description': 'KEPLRC Reference Section',
       'image': 'assets/images/section/reference.jpg',
     },
     {
+      'id': 'f2538a3a-38be-4f1f-a308-1093528300ea',
       'name': 'Medical Section',
       'description': 'KEPLRC Medical Section',
-      'image': 'assets/images/section/reference.jpg',
+      'image': 'assets/images/section/medical.jpg',
     },
     {
+      'id': '45d63b1e-a1ed-429e-bce2-8a47579e4136',
       'name': 'Filipiniana Section',
       'description': 'KEPLRC Filipiniana Section',
       'image': 'assets/images/section/reference.jpg',
     },
     {
+      'id': '34b3320d-7172-4845-bdd4-84d993b1283d',
       'name': 'USM Publication',
       'description': 'KEPLRC USM Publication Section',
       'image': 'assets/images/section/reference.jpg',
     },
     {
+      'id': 'f035c474-f8f2-4ac6-9a23-c821bc06323b',
       'name': 'Serials Section',
       'description': 'KEPLRC Serials Section',
       'image': 'assets/images/section/reference.jpg',
     },
     {
-      'name': 'IT Section',
+      'id': 'bb114cbb-cb6d-4668-b397-589fafdb71ed',
+      'name': 'Information Tech Section',
       'description': 'KEPLRC IT Section',
       'image': 'assets/images/section/reference.jpg',
     },
