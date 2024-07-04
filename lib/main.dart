@@ -15,8 +15,8 @@ class CrowdMonitoring extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.transparent,
-          brightness: Brightness.dark,
+          seedColor: Colors.orange,
+          brightness: Brightness.light,
         ),
         useMaterial3: true,
         fontFamily: 'Geist',

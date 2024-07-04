@@ -11,13 +11,37 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  final List<String> _sectionItems = [
-    'Reference Section',
-    'Medical Section',
-    'Filipiniana Section',
-    'USM Publication',
-    'Serials Section',
-    'IT Section',
+  final List<Map<String, dynamic>> sectionItems = [
+    {
+      'name': 'Reference Section',
+      'description': 'KEPLRC Reference Section',
+      'image': 'assets/images/section/reference.jpg',
+    },
+    {
+      'name': 'Medical Section',
+      'description': 'KEPLRC Medical Section',
+      'image': 'assets/images/section/reference.jpg',
+    },
+    {
+      'name': 'Filipiniana Section',
+      'description': 'KEPLRC Filipiniana Section',
+      'image': 'assets/images/section/reference.jpg',
+    },
+    {
+      'name': 'USM Publication',
+      'description': 'KEPLRC USM Publication Section',
+      'image': 'assets/images/section/reference.jpg',
+    },
+    {
+      'name': 'Serials Section',
+      'description': 'KEPLRC Serials Section',
+      'image': 'assets/images/section/reference.jpg',
+    },
+    {
+      'name': 'IT Section',
+      'description': 'KEPLRC IT Section',
+      'image': 'assets/images/section/reference.jpg',
+    },
   ];
 
   @override
@@ -39,9 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 10.0,
           ),
           Text(
-            "Library Section",
+            "KEPLRC Library Section",
             style: TextStyle(
-              fontSize: 27.0,
+              fontSize: 25.0,
               fontWeight: FontWeight.w600,
               color: colorScheme.onPrimaryContainer,
             ),
@@ -60,12 +84,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 10.0,
-                mainAxisExtent: 257.0,
+                mainAxisExtent: 240.0,
               ),
               itemCount: 6,
               itemBuilder: (context, index) {
                 return SectionItem(
-                  sectionName: _sectionItems[index],
+                  sectionName: sectionItems.elementAt(index)['name'],
+                  sectionImage: sectionItems.elementAt(index)['image'],
+                  sectionDescription: sectionItems.elementAt(index)['description'],
                 );
               },
             ),

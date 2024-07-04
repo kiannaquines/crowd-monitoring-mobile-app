@@ -44,7 +44,7 @@ class _MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       appBar: const HeaderNavigation(
-        title: 'Good morning!',
+        title: 'Good afternoon!',
         fullName: 'Kian Naquines, 🌙',
       ),
       body: bodyWidget,
