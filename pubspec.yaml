@@ -65,6 +65,8 @@ flutter:
     - assets/images/profile/profile.png
     - assets/images/section/reference.jpg
     - assets/images/section/medical.jpg
+    - assets/images/section/serials.jpg
+    - assets/images/section/publication.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

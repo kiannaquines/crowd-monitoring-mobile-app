@@ -28,13 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
       'id': '45d63b1e-a1ed-429e-bce2-8a47579e4136',
       'name': 'Filipiniana Section',
       'description': 'KEPLRC Filipiniana Section',
-      'image': 'assets/images/section/reference.jpg',
+      'image': 'assets/images/section/serials.jpg',
     },
     {
       'id': '34b3320d-7172-4845-bdd4-84d993b1283d',
       'name': 'USM Publication',
       'description': 'KEPLRC USM Publication Section',
-      'image': 'assets/images/section/reference.jpg',
+      'image': 'assets/images/section/publication.jpg',
     },
     {
       'id': 'f035c474-f8f2-4ac6-9a23-c821bc06323b',

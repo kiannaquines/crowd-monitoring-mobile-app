@@ -42,8 +42,9 @@ class _SectionItemState extends State<SectionItem> {
               children: [
                 ClipRRect(
                   borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10)),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
                   child: Image(
                     height: 125,
                     width: double.infinity,
