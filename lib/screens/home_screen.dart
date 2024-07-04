@@ -50,6 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
     },
   ];
 
+  void _handleRedirectClick(){
+    print("Redirecting...");
+  }
+
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
@@ -90,11 +94,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 10.0,
-                mainAxisExtent: 240.0,
+                mainAxisExtent: 260.0,
               ),
               itemCount: 6,
               itemBuilder: (context, index) {
                 return SectionItem(
+                  onPressed: _handleRedirectClick,
                   sectionName: sectionItems.elementAt(index)['name'],
                   sectionImage: sectionItems.elementAt(index)['image'],
                   sectionDescription: sectionItems.elementAt(index)['description'],
