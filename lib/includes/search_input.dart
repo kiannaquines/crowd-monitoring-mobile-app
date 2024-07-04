@@ -13,41 +13,43 @@ class SearchInput extends StatefulWidget {
 class _SearchInputState extends State<SearchInput> {
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     final String inputSearchTitle = widget.searchTitle;
 
     return TextFormField(
       decoration: InputDecoration(
-        focusedBorder: const OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 1.0,
-            color: Colors.white,
+            color: colorScheme.onPrimaryContainer,
           ),
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(
               10,
             ),
           ),
         ),
-        enabledBorder: const OutlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 1.0,
-            color: Colors.white,
+            color: colorScheme.onPrimaryContainer,
           ),
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(
               10,
             ),
           ),
         ),
-        prefixIcon: const Icon(
+        prefixIcon: Icon(
           Iconsax.search_favorite_1,
-          color: Colors.white,
+          color: colorScheme.onPrimaryContainer,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,
         label: Text(
           inputSearchTitle,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: colorScheme.onPrimaryContainer,
             fontSize: 18,
             fontWeight: FontWeight.w400,
           ),

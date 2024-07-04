@@ -12,18 +12,21 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Container(
       width: double.maxFinite,
       height: double.maxFinite,
       padding: const EdgeInsets.all(15.0),
-      child: const Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SearchInput(
+          const SearchInput(
             searchTitle: 'Search your section...',
           ),
-          SizedBox(
+          const SizedBox(
             height: 15.0,
           ),
           Text(
@@ -31,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(
               fontSize: 25.0,
               fontWeight: FontWeight.w600,
-              color: Colors.white,
+              color: colorScheme.onPrimaryContainer,
             ),
           ),
         ],

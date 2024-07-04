@@ -18,6 +18,9 @@ class HeaderNavigation extends StatefulWidget implements PreferredSizeWidget {
 class _HeaderNavigationState extends State<HeaderNavigation> {
   @override
   Widget build(BuildContext context) {
+
+    final colorScheme = Theme.of(context).colorScheme;
+
     return AppBar(
       title: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -25,10 +28,10 @@ class _HeaderNavigationState extends State<HeaderNavigation> {
         children: [
           Text(
             widget.fullName,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12.0,
-              fontWeight: FontWeight.w300,
-              color: Colors.white,
+              fontWeight: FontWeight.w400,
+              color: colorScheme.onPrimaryContainer,
             ),
           ),
           Text(
