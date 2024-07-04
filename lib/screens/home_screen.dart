@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:crowd/includes/search_input.dart';
 import 'package:crowd/includes/section_item.dart';
+import 'package:crowd/screens/section_information_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,7 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   final List<Map<String, dynamic>> sectionItems = [
     {
       'id': 'c896a933-1e11-488b-b5b5-ab6d1f5f4ae5',
@@ -50,8 +50,14 @@ class _HomeScreenState extends State<HomeScreen> {
     },
   ];
 
-  void _handleRedirectClick(){
-    print("Redirecting...");
+  void _handleRedirectClick() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const SectioninformationScreen(
+          title: 'Reference Section',
+        ),
+      ),
+    );
   }
 
   @override
@@ -87,7 +93,9 @@ class _HomeScreenState extends State<HomeScreen> {
               fontSize: 15.0,
             ),
           ),
-          const SizedBox(height: 5.0,),
+          const SizedBox(
+            height: 5.0,
+          ),
           Expanded(
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -102,7 +110,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: _handleRedirectClick,
                   sectionName: sectionItems.elementAt(index)['name'],
                   sectionImage: sectionItems.elementAt(index)['image'],
-                  sectionDescription: sectionItems.elementAt(index)['description'],
+                  sectionDescription:
+                      sectionItems.elementAt(index)['description'],
                 );
               },
             ),

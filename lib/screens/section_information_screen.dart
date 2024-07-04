@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:crowd/includes/top_navigation_bar.dart';
 
 class SectioninformationScreen extends StatefulWidget {
   const SectioninformationScreen({super.key, required this.title});
@@ -11,8 +12,9 @@ class SectioninformationScreen extends StatefulWidget {
 class _SectioninformationScreenState extends State<SectioninformationScreen> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Center(child: Text(widget.title)),
+    return Scaffold(
+      appBar: HeaderNavigation(title: widget.title,),
+      body: Center(child: Text(widget.title)),
     );
   }
 }

@@ -3,9 +3,9 @@ import 'package:iconsax/iconsax.dart';
 
 class HeaderNavigation extends StatefulWidget implements PreferredSizeWidget {
   const HeaderNavigation(
-      {super.key, required this.title, required this.fullName});
+      {super.key, required this.title, this.fullName});
   final String title;
-  final String fullName;
+  final String? fullName;
 
   @override
   State<HeaderNavigation> createState() => _HeaderNavigationState();
@@ -17,15 +17,18 @@ class HeaderNavigation extends StatefulWidget implements PreferredSizeWidget {
 class _HeaderNavigationState extends State<HeaderNavigation> {
   @override
   Widget build(BuildContext context) {
+    bool isEmptyUser = widget.fullName?.isEmpty ?? true;
+
     final colorScheme = Theme.of(context).colorScheme;
 
     return AppBar(
-      title: Column(
+      centerTitle: !isEmptyUser ? false : true,
+      title: !isEmptyUser ? Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            widget.fullName,
+            widget.fullName ?? '',
             style: TextStyle(
               fontSize: 12.0,
               fontWeight: FontWeight.w400,
@@ -40,7 +43,13 @@ class _HeaderNavigationState extends State<HeaderNavigation> {
             ),
           )
         ],
-      ),
+      ) : Text(
+            widget.title,
+            style: const TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 18.0,
+            ),
+          ),
       actions: <Widget>[
         IconButton(
           onPressed: () => {},
