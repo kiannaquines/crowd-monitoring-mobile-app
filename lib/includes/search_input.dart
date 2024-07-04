@@ -24,7 +24,7 @@ class _SearchInputState extends State<SearchInput> {
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(
-              35,
+              10,
             ),
           ),
         ),
@@ -35,7 +35,7 @@ class _SearchInputState extends State<SearchInput> {
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(
-              35,
+              10,
             ),
           ),
         ),
