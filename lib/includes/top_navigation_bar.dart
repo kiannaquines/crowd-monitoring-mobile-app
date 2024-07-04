@@ -11,13 +11,12 @@ class HeaderNavigation extends StatefulWidget implements PreferredSizeWidget {
   State<HeaderNavigation> createState() => _HeaderNavigationState();
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 20);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 5);
 }
 
 class _HeaderNavigationState extends State<HeaderNavigation> {
   @override
   Widget build(BuildContext context) {
-
     final colorScheme = Theme.of(context).colorScheme;
 
     return AppBar(
@@ -36,12 +35,19 @@ class _HeaderNavigationState extends State<HeaderNavigation> {
           Text(
             widget.title,
             style: const TextStyle(
-                fontWeight: FontWeight.w500, fontSize: 18.0),
+              fontWeight: FontWeight.w500,
+              fontSize: 18.0,
+            ),
           )
         ],
       ),
       actions: <Widget>[
-        IconButton(onPressed: () => {}, icon: const Icon(Iconsax.menu))
+        IconButton(
+          onPressed: () => {},
+          icon: const Icon(
+            Iconsax.menu,
+          ),
+        )
       ],
     );
   }

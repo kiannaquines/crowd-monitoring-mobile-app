@@ -15,34 +15,28 @@ class _NavigationMenuState extends State<NavigationMenu> {
   @override
   Widget build(BuildContext context) {
 
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: ClipRRect(
-        borderRadius: const BorderRadius.all(Radius.circular(15)),
-        child: NavigationBar(
-          selectedIndex: widget.currentIndexPage,
-          onDestinationSelected: widget.destinationPage,
-          animationDuration: const Duration(milliseconds: 1000),
-          destinations: const [
-            NavigationDestination(
-              icon: Icon(Iconsax.home),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              icon: Icon(Iconsax.chart),
-              label: 'Sections',
-            ),
-            NavigationDestination(
-              icon: Icon(Iconsax.heart),
-              label: 'Favorate',
-            ),
-            NavigationDestination(
-              icon: Icon(Iconsax.user),
-              label: 'Profile',
-            ),
-          ],
+    return NavigationBar(
+      selectedIndex: widget.currentIndexPage,
+      onDestinationSelected: widget.destinationPage,
+      animationDuration: const Duration(milliseconds: 1000),
+      destinations: const [
+        NavigationDestination(
+          icon: Icon(Iconsax.home),
+          label: 'Home',
         ),
-      ),
+        NavigationDestination(
+          icon: Icon(Iconsax.chart),
+          label: 'Sections',
+        ),
+        NavigationDestination(
+          icon: Icon(Iconsax.heart),
+          label: 'Favorate',
+        ),
+        NavigationDestination(
+          icon: Icon(Iconsax.user),
+          label: 'Profile',
+        ),
+      ],
     );
   }
 }
