@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:crowd/utils/colors.dart';
 
 class SearchInput extends StatefulWidget {
   const SearchInput({super.key, required this.searchTitle});

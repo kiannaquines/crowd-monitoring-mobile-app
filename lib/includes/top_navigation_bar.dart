@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:crowd/utils/colors.dart';
 
 class HeaderNavigation extends StatefulWidget implements PreferredSizeWidget {
   const HeaderNavigation(

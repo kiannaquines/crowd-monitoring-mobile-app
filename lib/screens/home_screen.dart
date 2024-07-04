@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:crowd/includes/search_input.dart';
-import 'package:crowd/utils/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
