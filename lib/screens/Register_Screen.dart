@@ -129,13 +129,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(
                     width: 5.0,
                   ),
-                  Text(
-                    'Sign In',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15.0,
-                      color: colorScheme.primary,
-                      fontWeight: FontWeight.w600,
+                  GestureDetector(
+                    onTap: signUpWithEmail,
+                    child: Text(
+                      'Sign In',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: colorScheme.primary,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ],
