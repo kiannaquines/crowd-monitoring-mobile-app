@@ -82,11 +82,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 obscureText: false,
               ),
               const SizedBox(
-                height: 10.0,
+                height: 20.0,
               ),
               ButtonWidget(
                 buttonText: 'Send Confirmation',
-                icon: Iconsax.login,
+                icon: Iconsax.sms,
                 buttonTextColor: colorScheme.onPrimary,
                 buttonColor: colorScheme.onPrimaryFixedVariant,
                 action: logIn,

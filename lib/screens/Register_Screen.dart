@@ -12,7 +12,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
 
-  void logIn() {
+  void createAccount() {
     debugPrint('Function called');
   }
 
@@ -35,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'TaraLibrary',
+          'TaraLibrary Sign Up',
           style: TextStyle(
             fontSize: 25.0,
             fontWeight: FontWeight.w600,
@@ -51,7 +51,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Start your college journey with TaraLibrary!",
+                "Start your college journey with TaraLibrary App!",
                 style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
@@ -108,7 +108,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 icon: Iconsax.login,
                 buttonTextColor: colorScheme.onPrimary,
                 buttonColor: colorScheme.onPrimaryFixedVariant,
-                action: logIn,
+                action: createAccount,
               ),
               const SizedBox(
                 height: 20.0,
@@ -130,7 +130,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: 5.0,
                   ),
                   Text(
-                    'Sign up',
+                    'Sign In',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15.0,
