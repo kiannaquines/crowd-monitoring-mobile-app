@@ -43,8 +43,8 @@ class _MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       appBar: const HeaderNavigation(
-        title: 'Good afternoon!',
-        fullName: 'Kian Naquines, 🌙',
+        title: 'Good evening 🌙',
+        fullName: 'Kian Naquines',
       ),
       body: bodyWidget,
       bottomNavigationBar: NavigationMenu(

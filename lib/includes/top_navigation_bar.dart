@@ -29,20 +29,21 @@ class _HeaderNavigationState extends State<HeaderNavigation> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.fullName ?? '',
+                  widget.title,
                   style: TextStyle(
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18.0,
                     color: colorScheme.onPrimaryContainer,
                   ),
                 ),
                 Text(
-                  widget.title,
-                  style: const TextStyle(
+                  'Hello, ${widget.fullName}!',
+                  style: TextStyle(
+                    fontSize: 17.0,
                     fontWeight: FontWeight.w500,
-                    fontSize: 18.0,
+                    color: colorScheme.onPrimaryContainer,
                   ),
-                )
+                ),
               ],
             )
           : Text(
