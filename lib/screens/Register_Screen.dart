@@ -35,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'TaraLibrary Sign Up',
+          'Create Account',
           style: TextStyle(
             fontSize: 25.0,
             fontWeight: FontWeight.w600,
