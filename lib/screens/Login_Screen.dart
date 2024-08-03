@@ -4,6 +4,7 @@ import 'package:crowd/widgets/button.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:crowd/screens/register_screen.dart';
 import 'package:crowd/screens/forgot_password_screen.dart';
+import 'package:crowd/screens/main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,7 +14,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   void logIn() {
-    debugPrint('Function called');
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const MainScreen(),
+      ),
+    );
   }
 
   void signUpWithEmail() {
@@ -28,10 +33,10 @@ class _LoginScreenState extends State<LoginScreen> {
     debugPrint('Facebook sign up called');
   }
 
-  void forgotPassword(){
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => const ForgotPasswordScreen(),)
-    );
+  void forgotPassword() {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(
+      builder: (context) => const ForgotPasswordScreen(),
+    ));
   }
 
   @override
