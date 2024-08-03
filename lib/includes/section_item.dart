@@ -23,30 +23,30 @@ class _SectionItemState extends State<SectionItem> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: ClipRRect(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(
-            15,
-          ),
+    return ClipRRect(
+      borderRadius: const BorderRadius.all(
+        Radius.circular(
+          15,
         ),
-        child: GestureDetector(
-          onTap: widget.onPressed,
-          child: Container(
-            width: 60,
-            height: double.maxFinite,
-            color: colorScheme.onPrimary,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
+      ),
+      child: GestureDetector(
+        onTap: widget.onPressed,
+        child: Container(
+          width: double.infinity,
+          color: colorScheme.onPrimary,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: double.infinity,
+                child: ClipRRect(
                   borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                   ),
                   child: Image(
-                    height: 125,
+                    height: 150,
                     width: double.infinity,
                     fit: BoxFit.cover,
                     image: AssetImage(
@@ -54,11 +54,12 @@ class _SectionItemState extends State<SectionItem> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Padding(
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: Padding(
                   padding: const EdgeInsets.only(
+                    top: 5.0,
                     left: 10.0,
                     right: 10.0,
                   ),
@@ -90,32 +91,39 @@ class _SectionItemState extends State<SectionItem> {
                     ],
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+              ),
+              SizedBox(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    IconButton(
-                      onPressed: () {
-                        print("favorate clicked");
-                      },
-                      icon: Icon(
-                        Iconsax.star,
-                        color: colorScheme.onPrimaryContainer,
-                      ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            debugPrint("favorate clicked");
+                          },
+                          icon: Icon(
+                            Iconsax.star,
+                            color: colorScheme.onPrimaryContainer,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            debugPrint("heart cliked");
+                          },
+                          icon: Icon(
+                            Iconsax.heart,
+                            color: colorScheme.onPrimaryContainer,
+                          ),
+                        )
+                      ],
                     ),
-                    IconButton(
-                      onPressed: () {
-                        print("heart cliked");
-                      },
-                      icon: Icon(
-                        Iconsax.heart,
-                        color: colorScheme.onPrimaryContainer,
-                      ),
-                    )
                   ],
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/main_screen.dart';
 import 'package:flutter/services.dart';
+import 'package:crowd/screens/login_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,7 @@ class CrowdMonitoring extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CrowdPulse',
+      title: 'TaraLibrary',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -29,7 +29,7 @@ class CrowdMonitoring extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Geist',
       ),
-      home: const MainScreen(),
+      home: const LoginScreen(),
     );
   }
 }

@@ -15,36 +15,36 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'id': 'c896a933-1e11-488b-b5b5-ab6d1f5f4ae5',
       'name': 'Reference Section',
-      'description': 'KEPLRC Reference Section',
+      'description': 'KEPLRC Reference',
       'image': 'assets/images/section/reference.jpg',
     },
     {
       'id': 'f2538a3a-38be-4f1f-a308-1093528300ea',
       'name': 'Medical Section',
-      'description': 'KEPLRC Medical Section',
+      'description': 'KEPLRC Medical',
       'image': 'assets/images/section/medical.jpg',
     },
     {
       'id': '45d63b1e-a1ed-429e-bce2-8a47579e4136',
       'name': 'Filipiniana Section',
-      'description': 'KEPLRC Filipiniana Section',
+      'description': 'KEPLRC Filipiniana',
       'image': 'assets/images/section/serials.jpg',
     },
     {
       'id': '34b3320d-7172-4845-bdd4-84d993b1283d',
-      'name': 'USM Publication',
-      'description': 'KEPLRC USM Publication Section',
+      'name': 'Publication Section',
+      'description': 'KEPLRC Publication',
       'image': 'assets/images/section/publication.jpg',
     },
     {
       'id': 'f035c474-f8f2-4ac6-9a23-c821bc06323b',
-      'name': 'Serials Section',
-      'description': 'KEPLRC Serials Section',
+      'name': 'USM Serials',
+      'description': 'KEPLRC Serials',
       'image': 'assets/images/section/reference.jpg',
     },
     {
       'id': 'bb114cbb-cb6d-4668-b397-589fafdb71ed',
-      'name': 'Information Tech Section',
+      'name': 'Information Tech',
       'description': 'KEPLRC IT Section',
       'image': 'assets/images/section/reference.jpg',
     },
@@ -73,13 +73,13 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SearchInput(
-            searchTitle: 'Search your library section...',
+            searchTitle: 'Search your favorite library spot...',
           ),
           const SizedBox(
             height: 10.0,
           ),
           Text(
-            "KEPLRC Library Section",
+            "KEPLRC Library Sections",
             style: TextStyle(
               fontSize: 25.0,
               fontWeight: FontWeight.w600,
@@ -87,14 +87,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Text(
-            'Go to your library spot without hesitation',
+            'Go to your library spot without any hesitations',
             style: TextStyle(
-              color: colorScheme.onPrimaryContainer,
+              color: colorScheme.onSecondaryContainer,
               fontSize: 15.0,
+              fontWeight: FontWeight.w500,
             ),
           ),
           const SizedBox(
-            height: 5.0,
+            height: 10.0,
           ),
           Expanded(
             child: GridView.builder(
