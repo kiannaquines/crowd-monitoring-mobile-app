@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:crowd/widgets/input.dart';
 import 'package:crowd/widgets/button.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:crowd/screens/register_screen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -16,11 +17,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   }
 
   void signUpWithEmail() {
-    // Navigator.of(context).push(
-    //   MaterialPageRoute(
-    //     builder: (context) => const RegisterScreen(),
-    //   ),
-    // );
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const RegisterScreen(),
+      ),
+    );
   }
 
   void signUpWithFacebook() {
@@ -28,9 +29,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   }
 
   void forgotPassword(){
-    // Navigator.of(context).push(
-    //   MaterialPageRoute(builder: (context) => const ForgotPasswordScreen(),)
-    // );
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => const ForgotPasswordScreen(),)
+    );
   }
 
   @override

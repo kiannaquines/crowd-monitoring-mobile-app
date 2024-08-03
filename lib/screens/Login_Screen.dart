@@ -17,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void signUpWithEmail() {
-    Navigator.of(context).push(
+    Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (context) => const RegisterScreen(),
       ),
@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void forgotPassword(){
-    Navigator.of(context).push(
+    Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (context) => const ForgotPasswordScreen(),)
     );
   }

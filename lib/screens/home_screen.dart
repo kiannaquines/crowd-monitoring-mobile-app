@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   void _handleRedirectClick() {
-    Navigator.of(context).push(
+    Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (context) => const SectioninformationScreen(
           title: 'Reference Section',
