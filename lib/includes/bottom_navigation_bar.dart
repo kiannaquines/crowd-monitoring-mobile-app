@@ -14,22 +14,21 @@ class NavigationMenu extends StatefulWidget {
 class _NavigationMenuState extends State<NavigationMenu> {
   @override
   Widget build(BuildContext context) {
-
     return NavigationBar(
       selectedIndex: widget.currentIndexPage,
       onDestinationSelected: widget.destinationPage,
-      animationDuration: const Duration(milliseconds: 1000),
+      animationDuration: const Duration(milliseconds: 900),
       destinations: const [
         NavigationDestination(
           icon: Icon(Iconsax.home),
           label: 'Home',
         ),
         NavigationDestination(
-          icon: Icon(Iconsax.chart),
-          label: 'Sections',
+          icon: Icon(Iconsax.scan),
+          label: 'Schedules',
         ),
         NavigationDestination(
-          icon: Icon(Iconsax.heart),
+          icon: Icon(Iconsax.heart,),
           label: 'Favorate',
         ),
         NavigationDestination(

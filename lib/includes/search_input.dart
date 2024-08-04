@@ -54,6 +54,11 @@ class _SearchInputState extends State<SearchInput> {
           ),
         ),
       ),
+      style: TextStyle(
+        color: colorScheme.onPrimaryContainer,
+        fontSize: 18.0,
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 }

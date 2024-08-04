@@ -11,7 +11,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-
+  bool? isChecked = true;
   void createAccount() {
     debugPrint('Function called');
   }
@@ -70,7 +70,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               const SizedBox(
-                height: 40.0,
+                height: 30.0,
               ),
               const InputWidget(
                 inputTitle: 'Email Address',
@@ -78,15 +78,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 obscureText: false,
               ),
               const SizedBox(
-                height: 15.0,
-              ),
-              const InputWidget(
-                inputTitle: 'Firstname',
-                inputIcon: Iconsax.user,
-                obscureText: false,
-              ),
-              const SizedBox(
-                height: 15.0,
+                height: 20.0,
               ),
               const InputWidget(
                 inputTitle: 'Password',
@@ -94,15 +86,38 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 obscureText: true,
               ),
               const SizedBox(
-                height: 15.0,
+                height: 25.0,
               ),
               const InputWidget(
                 inputTitle: 'Confirm Password',
                 inputIcon: Iconsax.lock,
                 obscureText: true,
               ),
-              const SizedBox(
-                height: 20.0,
+              Container(
+                padding: EdgeInsets.zero,
+                margin: EdgeInsets.zero,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Checkbox(
+                      value: isChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isChecked = value!;
+                        });
+                      },
+                    ),
+                    Text(
+                      'Agree with terms and Condition',
+                      style: TextStyle(
+                        color: colorScheme.primary,
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               ButtonWidget(
                 buttonText: 'Create Account',
@@ -112,7 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 action: createAccount,
               ),
               const SizedBox(
-                height: 20.0,
+                height: 25.0,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,

@@ -22,7 +22,7 @@ class _HeaderNavigationState extends State<HeaderNavigation> {
     final colorScheme = Theme.of(context).colorScheme;
 
     return AppBar(
-      centerTitle: !isEmptyUser ? false : true,
+      centerTitle: !isEmptyUser ? false : false,
       title: !isEmptyUser
           ? Column(
               mainAxisAlignment: MainAxisAlignment.start,

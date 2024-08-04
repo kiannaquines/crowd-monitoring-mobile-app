@@ -13,6 +13,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool? isChecked = true;
+
   void logIn() {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
@@ -37,6 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (context) => const ForgotPasswordScreen(),
     ));
+  }
+
+  void rememberMe() {
+    debugPrint('Remember me called');
   }
 
   @override
@@ -112,7 +118,36 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: true,
               ),
               const SizedBox(
-                height: 20.0,
+                height: 2.0,
+              ),
+              Container(
+                padding: EdgeInsets.zero,
+                margin: EdgeInsets.zero,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Checkbox(
+                      value: isChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isChecked = value!;
+                        });
+                      },
+                    ),
+                    Text(
+                      'Remember me',
+                      style: TextStyle(
+                        color: colorScheme.primary,
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 2.0,
               ),
               ButtonWidget(
                 buttonText: 'Sign In',
@@ -122,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 action: logIn,
               ),
               const SizedBox(
-                height: 20.0,
+                height: 25.0,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,

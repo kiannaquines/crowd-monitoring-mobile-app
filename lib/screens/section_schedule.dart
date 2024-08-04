@@ -10,8 +10,10 @@ class SectionScreen extends StatefulWidget {
 class _SectionScreenState extends State<SectionScreen> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Center(child: Text(widget.title)),
+    return const Material(
+      child: Center(
+        child: Text('Section Schedule'),
+      ),
     );
   }
 }
