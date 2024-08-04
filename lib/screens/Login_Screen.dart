@@ -53,6 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
             color: colorScheme.primary,
           ),
         ),
+        leading: null,
       ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
@@ -62,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Start your college journey with TaraLibrary!",
+                "Start your college journey with TaraLibrary App!",
                 style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,

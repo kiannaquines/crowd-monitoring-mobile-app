@@ -14,6 +14,17 @@ class _ConfirmationEmailScreenState extends State<ConfirmationEmailScreen> {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Confirm Email',
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+            color: colorScheme.primary,
+          ),
+        ),
+        leading: null,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: SizedBox(

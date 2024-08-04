@@ -48,6 +48,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             color: colorScheme.primary,
           ),
         ),
+        leading: null,
       ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(

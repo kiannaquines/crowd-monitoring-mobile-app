@@ -17,7 +17,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void signUpWithEmail() {
-    Navigator.of(context).push(
+    Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (context) => const LoginScreen(),
       ),
@@ -42,6 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             color: colorScheme.primary,
           ),
         ),
+        leading: null,
       ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
