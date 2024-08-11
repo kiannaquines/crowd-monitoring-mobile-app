@@ -1,6 +1,9 @@
+import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:crowd/screens/login_screen.dart';
+// import 'package:crowd/screens/section_information_screen.dart';
+import 'package:crowd/screens/confirmation_email_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,15 +24,34 @@ class CrowdMonitoring extends StatelessWidget {
     return MaterialApp(
       title: 'TaraLibrary',
       debugShowCheckedModeBanner: false,
+      color: AppColors.primary,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.orange,
-          brightness: Brightness.light,
-        ),
+        scaffoldBackgroundColor: AppColors.grey,
         useMaterial3: true,
         fontFamily: 'Geist',
+        primaryColor: AppColors.primary,
+        navigationBarTheme: NavigationBarThemeData(
+          backgroundColor: AppColors.primary,
+          indicatorColor: AppColors.white,
+          labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>(
+            (Set<WidgetState> states) {
+              if (states.contains(WidgetState.selected)) {
+                return const TextStyle(color: AppColors.white);
+              }
+              return const TextStyle(color: AppColors.grey);
+            },
+          ),
+          iconTheme: WidgetStateProperty.resolveWith<IconThemeData>(
+            (Set<WidgetState> states) {
+              if (states.contains(WidgetState.selected)) {
+                return const IconThemeData(color: AppColors.primary);
+              }
+              return const IconThemeData(color: AppColors.white);
+            },
+          ),
+        ),
       ),
-      home: const LoginScreen(),
+      home: const ConfirmationEmailScreen(),
     );
   }
 }

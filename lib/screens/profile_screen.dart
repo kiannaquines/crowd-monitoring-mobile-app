@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:crowd/utils/colors.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -12,19 +12,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void actionButton() {
     debugPrint('Action Button Pressed');
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       body: const Center(
         child: Text('Profile Screen'),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: colorScheme.onPrimaryContainer,
+        backgroundColor: AppColors.primary,
         onPressed: actionButton,
         elevation: null,
-        child: Icon(Icons.fingerprint, color: colorScheme.onPrimary),
+        child: const Icon(
+          Icons.fingerprint,
+          color: AppColors.white,
+        ),
       ),
     );
   }

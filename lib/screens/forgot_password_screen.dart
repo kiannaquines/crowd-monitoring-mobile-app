@@ -1,3 +1,4 @@
+import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/widgets/input.dart';
 import 'package:crowd/widgets/button.dart';
@@ -39,17 +40,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Forgot Password',
-          style: TextStyle(
-            fontSize: 25.0,
-            fontWeight: FontWeight.w600,
-            color: colorScheme.primary,
-          ),
-        ),
-        leading: null,
-      ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
           padding: const EdgeInsets.all(15.0),
@@ -57,8 +47,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              const SizedBox(height: 30.0,),
               Text(
-                "Start your college journey with TaraLibrary!",
+                "Recover your account password",
                 style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
@@ -89,8 +80,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ButtonWidget(
                 buttonText: 'Send Confirmation',
                 icon: Iconsax.sms,
-                buttonTextColor: colorScheme.onPrimary,
-                buttonColor: colorScheme.onPrimaryFixedVariant,
+                buttonTextColor: AppColors.white,
+                buttonColor: AppColors.primary,
                 action: logIn,
               ),
               const SizedBox(
@@ -100,12 +91,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'Already have an account?',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15.0,
-                      color: colorScheme.primary,
+                      color: AppColors.primary,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -114,12 +105,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                   GestureDetector(
                     onTap: signUpWithEmail,
-                    child: Text(
+                    child: const Text(
                       'Sign In',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15.0,
-                        color: colorScheme.primary,
+                        color: AppColors.primary,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -129,16 +120,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               const SizedBox(
                 height: 30.0,
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Expanded(
                     child: Divider(
-                      color: colorScheme.primary,
+                      color: AppColors.primary,
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 5.0,
                   ),
                   Text(
@@ -146,16 +137,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15.0,
-                      color: colorScheme.primary,
-                      fontWeight: FontWeight.w600,
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 5.0,
                   ),
                   Expanded(
                     child: Divider(
-                      color: colorScheme.primary,
+                      color: AppColors.primary,
                     ),
                   ),
                 ],
@@ -165,8 +156,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ),
               ButtonWidget(
                 buttonText: 'Sign In with Email',
-                buttonColor: colorScheme.onPrimaryContainer,
-                buttonTextColor: colorScheme.onTertiary,
+                buttonColor: AppColors.darker,
+                buttonTextColor: AppColors.white,
                 icon: Icons.email,
                 action: signUpWithEmail,
               ),
@@ -175,8 +166,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ),
               ButtonWidget(
                 buttonText: 'Sign In with Facebook',
-                buttonColor: colorScheme.onPrimaryContainer,
-                buttonTextColor: colorScheme.onTertiary,
+                buttonColor: AppColors.darker,
+                buttonTextColor: AppColors.white,
                 icon: Icons.facebook,
                 action: signUpWithFacebook,
               ),

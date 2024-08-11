@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:crowd/utils/colors.dart';
 
 class NavigationMenu extends StatefulWidget {
-  const NavigationMenu({super.key, required this.currentIndexPage, required this.destinationPage});
+  const NavigationMenu(
+      {super.key,
+      required this.currentIndexPage,
+      required this.destinationPage});
 
   final int currentIndexPage;
   final ValueChanged<int> destinationPage;
@@ -14,28 +18,45 @@ class NavigationMenu extends StatefulWidget {
 class _NavigationMenuState extends State<NavigationMenu> {
   @override
   Widget build(BuildContext context) {
-    return NavigationBar(
-      selectedIndex: widget.currentIndexPage,
-      onDestinationSelected: widget.destinationPage,
-      animationDuration: const Duration(milliseconds: 900),
-      destinations: const [
-        NavigationDestination(
-          icon: Icon(Iconsax.home),
-          label: 'Home',
+    return Padding(
+      padding: const EdgeInsets.all(7.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: NavigationBar(
+          height: 75.0,
+          backgroundColor: AppColors.primary,
+          selectedIndex: widget.currentIndexPage,
+          onDestinationSelected: widget.destinationPage,
+          animationDuration: const Duration(milliseconds: 900),
+          indicatorColor: AppColors.white,
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(
+                Iconsax.home,
+              ),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              icon: Icon(
+                Iconsax.calendar,
+              ),
+              label: 'Schedules',
+            ),
+            NavigationDestination(
+              icon: Icon(
+                Iconsax.heart,
+              ),
+              label: 'Favorate',
+            ),
+            NavigationDestination(
+              icon: Icon(
+                Iconsax.user,
+              ),
+              label: 'Profile',
+            ),
+          ],
         ),
-        NavigationDestination(
-          icon: Icon(Iconsax.scan),
-          label: 'Schedules',
-        ),
-        NavigationDestination(
-          icon: Icon(Iconsax.heart,),
-          label: 'Favorate',
-        ),
-        NavigationDestination(
-          icon: Icon(Iconsax.user),
-          label: 'Profile',
-        ),
-      ],
+      ),
     );
   }
 }

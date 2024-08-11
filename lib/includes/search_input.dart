@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:crowd/utils/colors.dart';
 
 class SearchInput extends StatefulWidget {
-  const SearchInput({super.key, required this.searchTitle});
-  final String searchTitle;
+  const SearchInput({super.key});
 
   @override
   State<SearchInput> createState() => _SearchInputState();
@@ -12,18 +13,17 @@ class SearchInput extends StatefulWidget {
 class _SearchInputState extends State<SearchInput> {
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-
-    final String inputSearchTitle = widget.searchTitle;
 
     return TextFormField(
-      decoration: InputDecoration(
+      keyboardType: TextInputType.text,
+      autocorrect: false,
+      decoration: const InputDecoration(
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 1.0,
-            color: colorScheme.onPrimaryContainer,
+            color: AppColors.primary,
           ),
-          borderRadius: const BorderRadius.all(
+          borderRadius: BorderRadius.all(
             Radius.circular(
               10,
             ),
@@ -32,9 +32,9 @@ class _SearchInputState extends State<SearchInput> {
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 1.0,
-            color: colorScheme.onPrimaryContainer,
+            color: AppColors.primary,
           ),
-          borderRadius: const BorderRadius.all(
+          borderRadius: BorderRadius.all(
             Radius.circular(
               10,
             ),
@@ -42,23 +42,20 @@ class _SearchInputState extends State<SearchInput> {
         ),
         prefixIcon: Icon(
           Iconsax.search_favorite_1,
-          color: colorScheme.onPrimaryContainer,
+          color: AppColors.primary,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,
-        label: Text(
-          inputSearchTitle,
-          style: TextStyle(
-            color: colorScheme.onPrimaryContainer,
-            fontSize: 18,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
+        hintText: 'Search your library spot...',
+        hintStyle: TextStyle(
+          color: AppColors.primary,
+        )
       ),
-      style: TextStyle(
-        color: colorScheme.onPrimaryContainer,
+      style: const TextStyle(
+        color: AppColors.secondary,
         fontSize: 18.0,
         fontWeight: FontWeight.w500,
       ),
+      cursorColor: AppColors.primary,
     );
   }
 }

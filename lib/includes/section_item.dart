@@ -1,5 +1,7 @@
+import 'package:crowd/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:crowd/utils/colors.dart';
 
 class SectionItem extends StatefulWidget {
   const SectionItem({
@@ -22,7 +24,7 @@ class SectionItem extends StatefulWidget {
 class _SectionItemState extends State<SectionItem> {
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+
     return ClipRRect(
       borderRadius: const BorderRadius.all(
         Radius.circular(
@@ -33,7 +35,7 @@ class _SectionItemState extends State<SectionItem> {
         onTap: widget.onPressed,
         child: Container(
           width: double.infinity,
-          color: colorScheme.onPrimary,
+          color: AppColors.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,34 +57,41 @@ class _SectionItemState extends State<SectionItem> {
                   ),
                 ),
               ),
-              SizedBox(
-                width: double.infinity,
+              Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(
                     top: 5.0,
-                    left: 10.0,
-                    right: 10.0,
+                    left: 8.0,
+                    right: 8.0,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        widget.sectionName,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          color: colorScheme.onSurface,
+                      Flexible(
+                        child: Text(
+                          widget.sectionName,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                            color: AppColors.primary,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       const SizedBox(
                         height: 5.0,
                       ),
-                      Text(
-                        widget.sectionDescription,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: colorScheme.onPrimaryFixedVariant,
+                      Flexible(
+                        child: Text(
+                          widget.sectionDescription,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                            color: AppColors.secondary,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       const SizedBox(
@@ -98,31 +107,40 @@ class _SectionItemState extends State<SectionItem> {
                   children: [
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         IconButton(
                           onPressed: () {
                             debugPrint("favorate clicked");
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Iconsax.star,
-                            color: colorScheme.onPrimaryContainer,
+                            color: AppColors.primary,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            debugPrint("favorate clicked");
+                          },
+                          icon: const Icon(
+                            Iconsax.message,
+                            color: AppColors.primary,
                           ),
                         ),
                         IconButton(
                           onPressed: () {
                             debugPrint("heart cliked");
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Iconsax.heart,
-                            color: colorScheme.onPrimaryContainer,
+                            color: AppColors.primary,
                           ),
                         )
                       ],
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

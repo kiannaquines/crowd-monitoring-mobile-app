@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:crowd/includes/search_input.dart';
 import 'package:crowd/includes/section_item.dart';
 import 'package:crowd/screens/section_information_screen.dart';
+import 'package:crowd/utils/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -44,25 +45,22 @@ class _HomeScreenState extends State<HomeScreen> {
     },
     {
       'id': 'bb114cbb-cb6d-4668-b397-589fafdb71ed',
-      'name': 'Information Tech',
+      'name': 'Information Technology',
       'description': 'KEPLRC IT Section',
       'image': 'assets/images/section/reference.jpg',
     },
   ];
 
   void _handleRedirectClick() {
-    Navigator.of(context).pushReplacement(
+    Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const SectioninformationScreen(
-          title: 'Reference Section',
-        ),
+        builder: (context) => const SectioninformationScreen(),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
 
     return Container(
       width: double.maxFinite,
@@ -72,24 +70,22 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SearchInput(
-            searchTitle: 'Search your favorite library spot...',
-          ),
+          const SearchInput(),
           const SizedBox(
             height: 10.0,
           ),
-          Text(
+          const Text(
             "KEPLRC Library Sections",
             style: TextStyle(
               fontSize: 25.0,
               fontWeight: FontWeight.w600,
-              color: colorScheme.onPrimaryContainer,
+              color: AppColors.primary,
             ),
           ),
-          Text(
+          const Text(
             'Go to your library spot without any hesitations',
             style: TextStyle(
-              color: colorScheme.onSecondaryContainer,
+              color: AppColors.secondary,
               fontSize: 15.0,
               fontWeight: FontWeight.w500,
             ),

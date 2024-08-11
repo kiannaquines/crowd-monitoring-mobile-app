@@ -1,4 +1,7 @@
+import 'package:crowd/screens/login_screen.dart';
+import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ConfirmationEmailScreen extends StatefulWidget {
@@ -11,58 +14,45 @@ class ConfirmationEmailScreen extends StatefulWidget {
 class _ConfirmationEmailScreenState extends State<ConfirmationEmailScreen> {
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Confirm Email',
-          style: TextStyle(
-            fontSize: 25.0,
-            fontWeight: FontWeight.w600,
-            color: colorScheme.primary,
-          ),
-        ),
-        leading: null,
-      ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: SizedBox(
           width: double.infinity,
           height: double.maxFinite,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(
+              const Center(
                 child: Icon(
-                  Iconsax.chart_success4,
-                  size: 100.0,
-                  color: colorScheme.primary,
+                  Iconsax.sms,
+                  size: 120.0,
+                  color: AppColors.primary,
                 ),
               ),
               const SizedBox(
                 height: 30.0,
               ),
-              Center(
+              const Center(
                 child: Text(
                   'Account Confirmation',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 30.0,
-                    color: colorScheme.primary,
+                    fontSize: 25.0,
+                    color: AppColors.primary,
                   ),
                 ),
               ),
               const SizedBox(
                 height: 15.0,
               ),
-              Text(
+              const Text(
                 'Please check your inbox for the confirmation link.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
-                  color: colorScheme.primary,
+                  color: AppColors.primary,
                 ),
               ),
               const SizedBox(
@@ -77,14 +67,15 @@ class _ConfirmationEmailScreenState extends State<ConfirmationEmailScreen> {
                   child: Container(
                     width: double.infinity,
                     height: 50.0,
-                    decoration: BoxDecoration(color: colorScheme.primary),
-                    child: Center(
+                    decoration: const BoxDecoration(color: AppColors.primary),
+                    child: const Center(
                       child: Text(
                         'Resend Confirmation Email',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: colorScheme.onPrimary,
+                          color: AppColors.white,
                           fontSize: 18.0,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
@@ -107,12 +98,22 @@ class _ConfirmationEmailScreenState extends State<ConfirmationEmailScreen> {
                       color: Colors.transparent,
                     ),
                     child: Center(
-                      child: Text(
-                        'Back to Login',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: colorScheme.primary,
-                          fontSize: 18.0,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) => const LoginScreen(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Back to Login',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ),

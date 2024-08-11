@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:crowd/utils/colors.dart';
 
 class InputWidget extends StatefulWidget {
   const InputWidget({super.key, required this.inputTitle, required this.inputIcon, required this.obscureText});
@@ -13,7 +14,6 @@ class InputWidget extends StatefulWidget {
 class _InputWidgetState extends State<InputWidget> {
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
 
     final String title = widget.inputTitle;
     final IconData icon = widget.inputIcon;
@@ -22,23 +22,23 @@ class _InputWidgetState extends State<InputWidget> {
     return TextFormField(
       obscureText: type,
       decoration: InputDecoration(
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             width: 1.0,
-            color: colorScheme.primary,
+            color: AppColors.primary,
           ),
-          borderRadius: const BorderRadius.all(
+          borderRadius: BorderRadius.all(
             Radius.circular(
               10,
             ),
           ),
         ),
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             width: 1.0,
-            color: colorScheme.primary,
+            color: AppColors.primary,
           ),
-          borderRadius: const BorderRadius.all(
+          borderRadius: BorderRadius.all(
             Radius.circular(
               10,
             ),
@@ -46,22 +46,22 @@ class _InputWidgetState extends State<InputWidget> {
         ),
         prefixIcon: Icon(
           icon,
-          color: colorScheme.primary,
+          color: AppColors.primary,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.auto,
         label: Text(
           title,
-          style: TextStyle(
-            color: colorScheme.primary,
+          style: const TextStyle(
+            color: AppColors.primary,
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
         ),
       ),
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w500,
-        color: colorScheme.primary,
+        color: AppColors.primary,
       )
     );
   }
