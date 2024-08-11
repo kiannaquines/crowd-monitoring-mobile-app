@@ -25,10 +25,10 @@ class _ProfileAvatarState extends State<ProfileAvatar> {
     } else {
       return Container(
         decoration: BoxDecoration(
-          shape: BoxShape.circle, // Ensures the border is circular
+          shape: BoxShape.circle,
           border: Border.all(
-            color: AppColors.white, // Border color
-            width: 3.0, // Border width
+            color: AppColors.yellow,
+            width: 3.0,
           ),
         ),
         child: CircleAvatar(

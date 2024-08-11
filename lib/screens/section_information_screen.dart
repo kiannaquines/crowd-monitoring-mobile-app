@@ -45,9 +45,14 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
             fontWeight: FontWeight.w600,
           ),
         ),
-        leading: const Icon(
-          Iconsax.arrow_left,
-          color: AppColors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Iconsax.arrow_left,
+            color: AppColors.white,
+          ),
         ),
         actions: const <Widget>[
           Padding(
