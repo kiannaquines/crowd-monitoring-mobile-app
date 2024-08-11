@@ -72,7 +72,7 @@ class _SectionItemState extends State<SectionItem> {
                           style: const TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
-                            color: AppColors.primary,
+                            color: AppColors.darker,
                           ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -87,7 +87,7 @@ class _SectionItemState extends State<SectionItem> {
                           style: const TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
-                            color: AppColors.secondary,
+                            color: AppColors.primary,
                           ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
