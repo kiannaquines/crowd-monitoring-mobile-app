@@ -1,9 +1,9 @@
+import 'package:crowd/screens/login_screen.dart';
 import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/widgets/input.dart';
 import 'package:crowd/widgets/button.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:crowd/screens/register_screen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -13,14 +13,14 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
-  void logIn() {
-    debugPrint('Function called');
+  void sendEmail() {
+    debugPrint('Email sent');
   }
 
-  void signUpWithEmail() {
+  void signInWithEmail() {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => const RegisterScreen(),
+        builder: (context) => const LoginScreen(),
       ),
     );
   }
@@ -29,15 +29,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     debugPrint('Facebook sign up called');
   }
 
-  void forgotPassword(){
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => const ForgotPasswordScreen(),)
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
       body: Stack(children: <Widget>[
@@ -48,22 +41,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 30.0,),
-              Text(
+              const Text(
                 "Recover your account password",
                 style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
-                  color: colorScheme.primary,
+                  color: AppColors.primary,
                 ),
               ),
               const SizedBox(
                 height: 10.0,
               ),
-              Text(
+              const Text(
                 "Enter your email address below and we'll send you a password.",
                 style: TextStyle(
                   fontSize: 18.0,
-                  color: colorScheme.primary,
+                  color: AppColors.primary,
                 ),
               ),
               const SizedBox(
@@ -82,7 +75,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 icon: Iconsax.sms,
                 buttonTextColor: AppColors.white,
                 buttonColor: AppColors.primary,
-                action: logIn,
+                action: sendEmail,
               ),
               const SizedBox(
                 height: 20.0,
@@ -104,7 +97,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     width: 5.0,
                   ),
                   GestureDetector(
-                    onTap: signUpWithEmail,
+                    onTap: signInWithEmail,
                     child: const Text(
                       'Sign In',
                       textAlign: TextAlign.center,
@@ -159,7 +152,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 buttonColor: AppColors.darker,
                 buttonTextColor: AppColors.white,
                 icon: Icons.email,
-                action: signUpWithEmail,
+                action: signInWithEmail,
               ),
               const SizedBox(
                 height: 15.0,
@@ -174,12 +167,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               const SizedBox(
                 height: 35.0,
               ),
-              Text(
+              const Text(
                 'By signing in, you agree to our terms and \n conditions and privacy policy.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14.0,
-                  color: colorScheme.primary,
+                  color: AppColors.primary,
                 ),
               ),
             ],

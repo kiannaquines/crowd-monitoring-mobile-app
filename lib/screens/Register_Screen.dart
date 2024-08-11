@@ -20,6 +20,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void signUpWithEmail() {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
+        builder: (context) => const RegisterScreen(),
+      ),
+    );
+  }
+
+    void signInWithEmail() {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
         builder: (context) => const LoginScreen(),
       ),
     );
@@ -125,7 +133,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const Text(
-                    'Dont have an account yet?',
+                    'Already have an account?',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15.0,
@@ -137,7 +145,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: 5.0,
                   ),
                   GestureDetector(
-                    onTap: signUpWithEmail,
+                    onTap: signInWithEmail,
                     child: const Text(
                       'Sign In',
                       textAlign: TextAlign.center,

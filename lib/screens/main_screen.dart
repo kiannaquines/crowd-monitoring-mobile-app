@@ -1,7 +1,6 @@
 import 'package:crowd/screens/favorate_section_screen.dart';
 import 'package:crowd/screens/home_screen.dart';
 import 'package:crowd/screens/menu_screen.dart';
-import 'package:crowd/screens/profile_screen.dart';
 import 'package:crowd/screens/section_schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/includes/bottom_navigation_bar.dart';

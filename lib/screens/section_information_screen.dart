@@ -552,6 +552,10 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                     toY: 16,
                                     color: AppColors.primary,
                                     width: 13,
+                                    backDrawRodData: BackgroundBarChartRodData(
+                                      toY: 100,
+                                      color: AppColors.primary.withOpacity(0.5),
+                                    )
                                   ),
                                 ],
                               ),
