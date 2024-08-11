@@ -50,9 +50,9 @@ class _NavigationMenuState extends State<NavigationMenu> {
             ),
             NavigationDestination(
               icon: Icon(
-                Iconsax.user,
+                Iconsax.more,
               ),
-              label: 'Profile',
+              label: 'More',
             ),
           ],
         ),

@@ -2,8 +2,6 @@ import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:crowd/screens/login_screen.dart';
-// import 'package:crowd/screens/section_information_screen.dart';
-import 'package:crowd/screens/confirmation_email_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,7 +49,7 @@ class CrowdMonitoring extends StatelessWidget {
           ),
         ),
       ),
-      home: const ConfirmationEmailScreen(),
+      home: const LoginScreen(),
     );
   }
 }
