@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:crowd/utils/colors.dart';
 
@@ -15,6 +14,7 @@ class _SearchInputState extends State<SearchInput> {
   Widget build(BuildContext context) {
 
     return TextFormField(
+      textInputAction: TextInputAction.search,
       keyboardType: TextInputType.text,
       autocorrect: false,
       decoration: const InputDecoration(
@@ -36,7 +36,7 @@ class _SearchInputState extends State<SearchInput> {
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(
-              10,
+              30,
             ),
           ),
         ),

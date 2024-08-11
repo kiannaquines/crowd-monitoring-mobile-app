@@ -75,9 +75,9 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 10.0,
           ),
           const Text(
-            "KEPLRC Library Sections",
+            "Library Sections",
             style: TextStyle(
-              fontSize: 25.0,
+              fontSize: 26.0,
               fontWeight: FontWeight.w600,
               color: AppColors.primary,
             ),
@@ -86,8 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
             'Go to your library spot without any hesitations',
             style: TextStyle(
               color: AppColors.secondary,
-              fontSize: 15.0,
-              fontWeight: FontWeight.w500,
+              fontSize: 16.0,
+              fontWeight: FontWeight.w400,
             ),
           ),
           const SizedBox(
