@@ -47,7 +47,7 @@ class _SectionItemState extends State<SectionItem> {
                     bottomRight: Radius.circular(10),
                   ),
                   child: Image(
-                    height: 150,
+                    height: 120,
                     width: double.infinity,
                     fit: BoxFit.cover,
                     image: AssetImage(
