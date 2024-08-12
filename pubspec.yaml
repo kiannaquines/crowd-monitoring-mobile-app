@@ -19,6 +19,7 @@ dependencies:
   awesome_notifications: ^0.9.3+1
   awesome_notifications_core: ^0.9.0
   cached_network_image: ^3.4.0
+  icons_plus: ^5.0.0
   
 dev_dependencies:
   flutter_launcher_icons: "^0.13.1"
@@ -52,6 +53,7 @@ flutter:
     - assets/images/section/5.jpg
     - assets/images/section/6.jpg
     - assets/images/section/7.jpg
+    - assets/images/background/background.jpg
    
 
   fonts:

@@ -24,7 +24,18 @@ class CrowdMonitoring extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: AppColors.primary,
       theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.grey,
+        colorScheme: const ColorScheme(
+          brightness: Brightness.light,
+          primary: AppColors.primary,
+          onPrimary: AppColors.onPrimary,
+          secondary: AppColors.secondary,
+          onSecondary: AppColors.onSecondary,
+          error: AppColors.error,
+          onError: AppColors.white,
+          surface: AppColors.surface,
+          onSurface: AppColors.onSurface,
+        ),
+        scaffoldBackgroundColor: AppColors.lightGrey,
         useMaterial3: true,
         fontFamily: 'Geist',
         primaryColor: AppColors.primary,
@@ -36,7 +47,7 @@ class CrowdMonitoring extends StatelessWidget {
               if (states.contains(WidgetState.selected)) {
                 return const TextStyle(color: AppColors.white);
               }
-              return const TextStyle(color: AppColors.grey);
+              return const TextStyle(color: AppColors.mediumGrey);
             },
           ),
           iconTheme: WidgetStateProperty.resolveWith<IconThemeData>(

@@ -28,7 +28,7 @@ class _ProfileAvatarState extends State<ProfileAvatar> {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: AppColors.yellow,
+            color: AppColors.accent,
             width: 3.0,
           ),
         ),

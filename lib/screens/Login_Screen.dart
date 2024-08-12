@@ -6,6 +6,7 @@ import 'package:crowd/screens/register_screen.dart';
 import 'package:crowd/screens/forgot_password_screen.dart';
 import 'package:crowd/screens/main_screen.dart';
 import 'package:crowd/utils/colors.dart';
+import 'package:crowd/utils/utilities.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -49,36 +50,45 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColors.primary,
+        title: const Text(
+          'Sign In',
+          style: TextStyle(
+            color: AppColors.white,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(
-                height: 30.0,
-              ),
               const Text(
-                "Start your college journey",
+                "Start your college\njourney",
                 style: TextStyle(
-                  fontSize: 25.0,
-                  fontWeight: FontWeight.bold,
+                  fontSize: Utilities.headingTextSize,
+                  fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
               ),
               const SizedBox(
-                height: 10.0,
+                height: Utilities.defaultHeight,
               ),
               const Text(
-                "Start your session by logging in.",
+                "Start creating an account",
                 style: TextStyle(
-                  fontSize: 18.0,
+                  fontSize: Utilities.paragraphSize,
+                  fontWeight: FontWeight.w400,
                   color: AppColors.primary,
                 ),
               ),
               const SizedBox(
-                height: 20.0,
+                height: Utilities.defaultHeight,
               ),
               const InputWidget(
                 inputTitle: 'Email Address',
@@ -125,10 +135,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           isChecked = value!;
                         });
                       },
-                      activeColor: AppColors
-                          .primary,
-                      checkColor: Colors
-                          .white,
+                      activeColor: AppColors.primary,
+                      checkColor: Colors.white,
                     ),
                     const Text(
                       'Remember me',

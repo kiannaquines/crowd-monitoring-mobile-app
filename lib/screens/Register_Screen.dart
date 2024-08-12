@@ -40,6 +40,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColors.primary,
+        title: const Text(
+          'Sign Up',
+          style: TextStyle(
+            color: AppColors.white,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
           padding: const EdgeInsets.all(15.0),
@@ -47,20 +58,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 30.0,),
               const Text(
                 "Create an Account",
                 style: TextStyle(
-                  fontSize: 25.0,
+                  fontSize: 26.0,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primary,
                 ),
               ),
               const SizedBox(
-                height: 10.0,
+                height: 5.0,
               ),
               const Text(
-                "Start by creating your account.",
+                "Start by creating your first account.",
                 style: TextStyle(
                   fontSize: 18.0,
                   color: AppColors.primary,

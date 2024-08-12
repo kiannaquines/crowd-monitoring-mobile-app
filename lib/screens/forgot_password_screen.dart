@@ -33,6 +33,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColors.primary,
+        title: const Text(
+          'Forgot Password',
+          style: TextStyle(
+            color: AppColors.white,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
           padding: const EdgeInsets.all(15.0),
@@ -40,7 +51,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 30.0,),
               const Text(
                 "Recover your account password",
                 style: TextStyle(

@@ -62,7 +62,8 @@ class _InputWidgetState extends State<InputWidget> {
         fontSize: 18,
         fontWeight: FontWeight.w500,
         color: AppColors.primary,
-      )
+      ),
+      cursorColor: AppColors.primary,
     );
   }
 }

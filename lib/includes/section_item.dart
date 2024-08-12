@@ -70,9 +70,9 @@ class _SectionItemState extends State<SectionItem> {
                         child: Text(
                           widget.sectionName,
                           style: const TextStyle(
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                             fontSize: 16,
-                            color: AppColors.darker,
+                            color: AppColors.primary,
                           ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -85,9 +85,9 @@ class _SectionItemState extends State<SectionItem> {
                         child: Text(
                           widget.sectionDescription,
                           style: const TextStyle(
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w400,
                             fontSize: 14,
-                            color: AppColors.primary,
+                            color: AppColors.darkGrey,
                           ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -106,7 +106,7 @@ class _SectionItemState extends State<SectionItem> {
                   children: [
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
                           onPressed: () {
@@ -114,15 +114,6 @@ class _SectionItemState extends State<SectionItem> {
                           },
                           icon: const Icon(
                             Iconsax.star,
-                            color: AppColors.primary,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            debugPrint("favorate clicked");
-                          },
-                          icon: const Icon(
-                            Iconsax.message,
                             color: AppColors.primary,
                           ),
                         ),

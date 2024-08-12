@@ -38,12 +38,6 @@ class _NavigationMenuState extends State<NavigationMenu> {
             ),
             NavigationDestination(
               icon: Icon(
-                Iconsax.calendar,
-              ),
-              label: 'Schedules',
-            ),
-            NavigationDestination(
-              icon: Icon(
                 Iconsax.heart,
               ),
               label: 'Favorate',

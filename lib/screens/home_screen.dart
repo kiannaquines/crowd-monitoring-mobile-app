@@ -61,19 +61,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       width: double.maxFinite,
       height: double.maxFinite,
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15.0,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SearchInput(),
-          const SizedBox(
-            height: 10.0,
-          ),
           const Text(
             "Library Sections",
             style: TextStyle(
@@ -83,15 +80,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const Text(
-            'Go to your library spot without any hesitations',
+            'Explore your favorite sections with\nease and confidence',
             style: TextStyle(
-              color: AppColors.secondary,
+              color: AppColors.darkGrey,
               fontSize: 16.0,
               fontWeight: FontWeight.w400,
             ),
           ),
           const SizedBox(
-            height: 10.0,
+            height: 5.0,
           ),
           Expanded(
             child: GridView.builder(
