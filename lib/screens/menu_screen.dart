@@ -1,3 +1,4 @@
+import 'package:crowd/screens/profile_screen.dart';
 import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -173,11 +174,9 @@ class MenuScreen extends StatelessWidget {
   }
 
   void _handleItemTap(BuildContext context, String itemName) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('$itemName selected'),
-        duration: const Duration(seconds: 1),
-        backgroundColor: AppColors.primary,
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const ProfileScreen(),
       ),
     );
   }

@@ -23,138 +23,97 @@ class SectionItem extends StatefulWidget {
 class _SectionItemState extends State<SectionItem> {
   @override
   Widget build(BuildContext context) {
-
-    return ClipRRect(
-      borderRadius: const BorderRadius.all(
-        Radius.circular(
-          10,
+    return GestureDetector(
+      onTap: widget.onPressed,
+      child: Card(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
-      ),
-      child: GestureDetector(
-        onTap: widget.onPressed,
-        child: Container(
-          width: double.infinity,
-          color: AppColors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: double.infinity,
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  ),
-                  child: Stack(
-                    children: [
-                      Image(
-                        height: 120,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                          widget.sectionImage,
-                        ),
-                      ),
-                      Container(
-                          width: double.infinity,
-                          height: 120,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                AppColors.darker.withOpacity(
-                                  0.5,
-                                ),
-                                AppColors.darkGrey.withOpacity(
-                                  0.1,
-                                )
-                              ],
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                            ),
-                          ),
-                        ),
-                    ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: Image(
+                  height: 100,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    widget.sectionImage,
                   ),
                 ),
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 5.0,
-                    left: 8.0,
-                    right: 8.0,
-                  ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Flexible(
-                        child: Text(
-                          widget.sectionName,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: AppColors.primary,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                      Text(
+                        widget.sectionName,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: AppColors.primary,
                         ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      const SizedBox(
-                        height: 5.0,
-                      ),
-                      Flexible(
-                        child: Text(
-                          widget.sectionDescription,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: AppColors.darkGrey,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                      Text(
+                        widget.sectionDescription,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: AppColors.darkGrey,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 6.0,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
                 ),
               ),
-              SizedBox(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            debugPrint("favorate clicked");
-                          },
-                          icon: const Icon(
-                            Iconsax.heart_outline,
-                            color: AppColors.primary,
-                          ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          debugPrint("favorate clicked");
+                        },
+                        icon: const Icon(
+                          Iconsax.heart_outline,
+                          color: AppColors.primary,
                         ),
-                        IconButton(
-                          onPressed: () {
-                            debugPrint("liked cliked");
-                          },
-                          icon: const Icon(
-                            Iconsax.like_1_outline,
-                            color: AppColors.primary,
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          debugPrint("liked cliked");
+                        },
+                        icon: const Icon(
+                          Iconsax.like_1_outline,
+                          color: AppColors.primary,
+                        ),
+                      )
+                    ],
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
