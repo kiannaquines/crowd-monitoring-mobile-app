@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:crowd/utils/colors.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class ProfileAvatar extends StatefulWidget {
   const ProfileAvatar({super.key, this.imagePath, this.initial});
