@@ -165,7 +165,7 @@ class FavorateSectionScreen extends StatelessWidget {
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
-            color: AppColors.darker,
+            color: AppColors.primary,
           ),
         ),
         subtitle: Text(
@@ -178,9 +178,9 @@ class FavorateSectionScreen extends StatelessWidget {
         ),
         trailing: IconButton(
           onPressed: onPressed,
-          icon: const Icon(
+          icon: Icon(
             Bootstrap.heart_fill,
-            color: AppColors.primary,
+            color: AppColors.error.withOpacity(0.8),
             size: 25,
           ),
         ),

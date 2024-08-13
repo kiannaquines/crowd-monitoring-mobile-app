@@ -168,188 +168,205 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                   color: AppColors.primary,
                 ),
               ),
-              const SizedBox(
-                height: 5.0,
-              ),
-              Card(
-                color: AppColors.white,
-                elevation: 1.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        top: 10.0,
-                        left: 10.0,
-                        right: 10.0,
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Hourly Visitors',
-                            style: TextStyle(
-                              color: AppColors.primary,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Icon(
-                            Iconsax.arrow_up_1_outline,
-                            color: AppColors.primary,
-                          )
-                        ],
-                      ),
+              const SizedBox(height: 5.0),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: AppColors.mediumGrey,
+                      blurRadius: 10.0,
+                      spreadRadius: 1,
+                      offset: Offset(4, 4),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                      child: Text(
-                        "Hourly visits for today",
-                        style: TextStyle(
-                          color: AppColors.darkGrey
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 150,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 15.0,
-                          horizontal: 15.0,
-                        ),
-                        child: LineChart(
-                          LineChartData(
-                            maxY: 50,
-                            minY: 0,
-                            titlesData: FlTitlesData(
-                              leftTitles: const AxisTitles(
-                                sideTitles: SideTitles(showTitles: false),
-                              ),
-                              bottomTitles: AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: true,
-                                  getTitlesWidget: (value, _) {
-                                    const style = TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 10,
-                                    );
-                                    String text;
-                                    switch (value.toInt()) {
-                                      case 0:
-                                        text = '7am';
-                                        break;
-                                      case 1:
-                                        text = '8am';
-                                        break;
-                                      case 2:
-                                        text = '9am';
-                                        break;
-                                      case 3:
-                                        text = '10am';
-                                        break;
-                                      case 4:
-                                        text = '11am';
-                                        break;
-                                      case 5:
-                                        text = '12am';
-                                        break;
-                                      case 6:
-                                        text = '1pm';
-                                        break;
-
-                                      case 7:
-                                        text = '2pm';
-                                        break;
-                                      case 8:
-                                        text = '3pm';
-                                        break;
-                                      case 9:
-                                        text = '4pm';
-                                        break;
-                                      case 10:
-                                        text = '5pm';
-                                        break;
-                                      default:
-                                        return const SizedBox.shrink();
-                                    }
-                                    return Text(
-                                      text,
-                                      style: style,
-                                      textAlign: TextAlign.center,
-                                    );
-                                  },
-                                  reservedSize: 15,
-                                ),
-                              ),
-                              topTitles: const AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: false,
-                                ),
-                              ),
-                              rightTitles: const AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: false,
-                                ),
-                              ),
-                            ),
-                            borderData: FlBorderData(show: false),
-                            gridData: const FlGridData(show: false),
-                            lineBarsData: [
-                              LineChartBarData(
-                                spots: [
-                                  const FlSpot(0, 8),
-                                  const FlSpot(1, 12),
-                                  const FlSpot(2, 22),
-                                  const FlSpot(3, 12),
-                                  const FlSpot(4, 29),
-                                  const FlSpot(5, 10),
-                                  const FlSpot(6, 34),
-                                  const FlSpot(7, 13),
-                                  const FlSpot(8, 24),
-                                  const FlSpot(9, 13),
-                                  const FlSpot(10, 40),
-                                ],
-                                isCurved: false,
-                                color: AppColors.primary.withOpacity(0.8),
-                                barWidth: 4,
-                                isStrokeCapRound: true,
-                                dotData: const FlDotData(show: false),
-                                belowBarData: BarAreaData(
-                                  show: true,
-                                  color: AppColors.primary.withOpacity(0.1),
-                                ),
-                              ),
-                            ],
-                            minX: 0,
-                            maxX: 10,
-                            lineTouchData: LineTouchData(
-                              enabled: true,
-                              touchTooltipData: LineTouchTooltipData(
-                                getTooltipItems:
-                                    (List<LineBarSpot> lineBarSpots) {
-                                  return lineBarSpots.map((lineBarSpot) {
-                                    return LineTooltipItem(
-                                      '${lineBarSpot.y} Visitors',
-                                      const TextStyle(
-                                        color: AppColors.white,
-                                        fontSize: 10,
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                    BoxShadow(
+                      color: AppColors.lightGrey,
+                      blurRadius: 10.0,
+                      spreadRadius: 1,
+                      offset: Offset(-4,-4),
                     ),
                   ],
                 ),
+                child: Card(
+                  color: AppColors.white,
+                  elevation: 0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(
+                          top: 10.0,
+                          left: 10.0,
+                          right: 10.0,
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Hourly Visitors',
+                              style: TextStyle(
+                                color: AppColors.primary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Icon(
+                              Iconsax.arrow_up_1_outline,
+                              color: AppColors.primary,
+                            )
+                          ],
+                        ),
+                      ),
+                      const Padding(
+                        padding:
+                            EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                        child: Text(
+                          "Hourly visits for today",
+                          style: TextStyle(color: AppColors.darkGrey),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 150,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 15.0,
+                            horizontal: 15.0,
+                          ),
+                          child: LineChart(
+                            LineChartData(
+                              maxY: 50,
+                              minY: 0,
+                              titlesData: FlTitlesData(
+                                leftTitles: const AxisTitles(
+                                  sideTitles: SideTitles(showTitles: false),
+                                ),
+                                bottomTitles: AxisTitles(
+                                  sideTitles: SideTitles(
+                                    showTitles: true,
+                                    getTitlesWidget: (value, _) {
+                                      const style = TextStyle(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 10,
+                                      );
+                                      String text;
+                                      switch (value.toInt()) {
+                                        case 0:
+                                          text = '7am';
+                                          break;
+                                        case 1:
+                                          text = '8am';
+                                          break;
+                                        case 2:
+                                          text = '9am';
+                                          break;
+                                        case 3:
+                                          text = '10am';
+                                          break;
+                                        case 4:
+                                          text = '11am';
+                                          break;
+                                        case 5:
+                                          text = '12am';
+                                          break;
+                                        case 6:
+                                          text = '1pm';
+                                          break;
+
+                                        case 7:
+                                          text = '2pm';
+                                          break;
+                                        case 8:
+                                          text = '3pm';
+                                          break;
+                                        case 9:
+                                          text = '4pm';
+                                          break;
+                                        case 10:
+                                          text = '5pm';
+                                          break;
+                                        default:
+                                          return const SizedBox.shrink();
+                                      }
+                                      return Text(
+                                        text,
+                                        style: style,
+                                        textAlign: TextAlign.center,
+                                      );
+                                    },
+                                    reservedSize: 15,
+                                  ),
+                                ),
+                                topTitles: const AxisTitles(
+                                  sideTitles: SideTitles(
+                                    showTitles: false,
+                                  ),
+                                ),
+                                rightTitles: const AxisTitles(
+                                  sideTitles: SideTitles(
+                                    showTitles: false,
+                                  ),
+                                ),
+                              ),
+                              borderData: FlBorderData(show: false),
+                              gridData: const FlGridData(show: false),
+                              lineBarsData: [
+                                LineChartBarData(
+                                  spots: [
+                                    const FlSpot(0, 8),
+                                    const FlSpot(1, 12),
+                                    const FlSpot(2, 22),
+                                    const FlSpot(3, 12),
+                                    const FlSpot(4, 29),
+                                    const FlSpot(5, 10),
+                                    const FlSpot(6, 34),
+                                    const FlSpot(7, 13),
+                                    const FlSpot(8, 24),
+                                    const FlSpot(9, 13),
+                                    const FlSpot(10, 40),
+                                  ],
+                                  isCurved: false,
+                                  color: AppColors.primary.withOpacity(0.8),
+                                  barWidth: 4,
+                                  isStrokeCapRound: true,
+                                  dotData: const FlDotData(show: false),
+                                  belowBarData: BarAreaData(
+                                    show: true,
+                                    color: AppColors.primary.withOpacity(0.1),
+                                  ),
+                                ),
+                              ],
+                              minX: 0,
+                              maxX: 10,
+                              lineTouchData: LineTouchData(
+                                enabled: true,
+                                touchTooltipData: LineTouchTooltipData(
+                                  getTooltipItems:
+                                      (List<LineBarSpot> lineBarSpots) {
+                                    return lineBarSpots.map((lineBarSpot) {
+                                      return LineTooltipItem(
+                                        '${lineBarSpot.y} Visitors',
+                                        const TextStyle(
+                                          color: AppColors.white,
+                                          fontSize: 10,
+                                        ),
+                                      );
+                                    }).toList();
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               const SizedBox(
-                height: 5.0,
+                height: 10.0,
               ),
               const Text(
                 "Weekly Visitors",
@@ -359,256 +376,275 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                   color: AppColors.primary,
                 ),
               ),
-              Card(
-                color: AppColors.white,
-                elevation: 1.0,
-                shadowColor: colorScheme.primary.withOpacity(0.5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        top: 10.0,
-                        bottom: 5.0,
-                        left: 10.0,
-                        right: 10.0,
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Daily Visitors',
-                            style: TextStyle(
-                              color: AppColors.primary,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Icon(
-                            Iconsax.arrow_up_1_outline,
-                            color: AppColors.primary,
-                          )
-                        ],
-                      ),
+              const SizedBox(height: 5.0),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: AppColors.mediumGrey,
+                      blurRadius: 10.0,
+                      spreadRadius: 1,
+                      offset: Offset(4, 4),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                      child: Text(
-                        "Daily visits for today's week",
-                        style: TextStyle(
-                          color: AppColors.darkGrey
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 140,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: BarChart(
-                          BarChartData(
-                            alignment: BarChartAlignment.spaceBetween,
-                            maxY: 20,
-                            minY: 5,
-                            titlesData: FlTitlesData(
-                              leftTitles: const AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: false,
-                                  reservedSize: 15,
-                                ),
-                              ),
-                              bottomTitles: AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: true,
-                                  getTitlesWidget: (value, _) {
-                                    switch (value.toInt()) {
-                                      case 0:
-                                        return const Text(
-                                          'Sun',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                          ),
-                                        );
-                                      case 1:
-                                        return const Text(
-                                          'Mon',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                          ),
-                                        );
-                                      case 2:
-                                        return const Text(
-                                          'Tue',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                          ),
-                                        );
-                                      case 3:
-                                        return const Text(
-                                          'Wed',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                          ),
-                                        );
-                                      case 4:
-                                        return const Text(
-                                          'Thu',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                          ),
-                                        );
-                                      case 5:
-                                        return const Text(
-                                          'Fri',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                          ),
-                                        );
-                                      case 6:
-                                        return const Text(
-                                          'Sat',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                          ),
-                                        );
-                                      default:
-                                        return const SizedBox.shrink();
-                                    }
-                                  },
-                                ),
-                              ),
-                              topTitles: const AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: false,
-                                ),
-                              ),
-                              rightTitles: const AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: false,
-                                ),
-                              ),
-                            ),
-                            borderData: FlBorderData(
-                              show: false,
-                            ),
-                            gridData: const FlGridData(
-                              show: false,
-                            ),
-                            barTouchData: BarTouchData(
-                              touchTooltipData: BarTouchTooltipData(
-                                tooltipPadding: const EdgeInsets.all(8),
-                                tooltipMargin: 8,
-                                getTooltipItem:
-                                    (group, groupIndex, rod, rodIndex) {
-                                  return BarTooltipItem(
-                                    '${rod.toY} Visitors',
-                                    const TextStyle(
-                                      color: AppColors.white,
-                                      fontSize: 10,
-                                    ),
-                                  );
-                                },
-                              ),
-                              handleBuiltInTouches: true,
-                            ),
-                            barGroups: [
-                              BarChartGroupData(
-                                x: 0,
-                                barRods: [
-                                  BarChartRodData(
-                                    toY: 8,
-                                    color: AppColors.primary.withOpacity(0.8),
-                                    width: 13,
-                                  ),
-                                ],
-                              ),
-                              BarChartGroupData(
-                                x: 1,
-                                barRods: [
-                                  BarChartRodData(
-                                    toY: 12,
-                                    color: AppColors.primary.withOpacity(0.8),
-                                    width: 13,
-                                  ),
-                                ],
-                              ),
-                              BarChartGroupData(
-                                x: 2,
-                                barRods: [
-                                  BarChartRodData(
-                                    toY: 16,
-                                    color: AppColors.primary.withOpacity(0.8),
-                                    width: 13,
-                                  ),
-                                ],
-                              ),
-                              BarChartGroupData(
-                                x: 3,
-                                barRods: [
-                                  BarChartRodData(
-                                    toY: 12,
-                                    color: AppColors.primary.withOpacity(0.8),
-                                    width: 13,
-                                  ),
-                                ],
-                              ),
-                              BarChartGroupData(
-                                x: 4,
-                                barRods: [
-                                  BarChartRodData(
-                                      toY: 16,
-                                      color: AppColors.primary.withOpacity(0.8),
-                                      width: 13,
-                                      backDrawRodData:
-                                          BackgroundBarChartRodData(
-                                        toY: 100,
-                                        color:
-                                            AppColors.primary.withOpacity(0.5),
-                                      )),
-                                ],
-                              ),
-                              BarChartGroupData(
-                                x: 5,
-                                barRods: [
-                                  BarChartRodData(
-                                    toY: 10,
-                                    color: AppColors.primary.withOpacity(0.8),
-                                    width: 13,
-                                  ),
-                                ],
-                              ),
-                              BarChartGroupData(
-                                x: 6,
-                                barRods: [
-                                  BarChartRodData(
-                                    toY: 13,
-                                    color: AppColors.primary.withOpacity(0.8),
-                                    width: 13,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                    BoxShadow(
+                      color: AppColors.lightGrey,
+                      blurRadius: 10.0,
+                      spreadRadius: 1,
+                      offset: Offset(-4,-4),
                     ),
                   ],
                 ),
+                child: Card(
+                  color: AppColors.white,
+                  elevation: 0,
+                  shadowColor: colorScheme.primary.withOpacity(0.5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(
+                          top: 10.0,
+                          bottom: 5.0,
+                          left: 10.0,
+                          right: 10.0,
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Daily Visitors',
+                              style: TextStyle(
+                                color: AppColors.primary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Icon(
+                              Iconsax.arrow_up_1_outline,
+                              color: AppColors.primary,
+                            )
+                          ],
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                        child: Text(
+                          "Daily visits for today's week",
+                          style: TextStyle(color: AppColors.darkGrey),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 140,
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: BarChart(
+                            BarChartData(
+                              alignment: BarChartAlignment.spaceBetween,
+                              maxY: 20,
+                              minY: 5,
+                              titlesData: FlTitlesData(
+                                leftTitles: const AxisTitles(
+                                  sideTitles: SideTitles(
+                                    showTitles: false,
+                                    reservedSize: 15,
+                                  ),
+                                ),
+                                bottomTitles: AxisTitles(
+                                  sideTitles: SideTitles(
+                                    showTitles: true,
+                                    getTitlesWidget: (value, _) {
+                                      switch (value.toInt()) {
+                                        case 0:
+                                          return const Text(
+                                            'Sun',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10,
+                                            ),
+                                          );
+                                        case 1:
+                                          return const Text(
+                                            'Mon',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10,
+                                            ),
+                                          );
+                                        case 2:
+                                          return const Text(
+                                            'Tue',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10,
+                                            ),
+                                          );
+                                        case 3:
+                                          return const Text(
+                                            'Wed',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10,
+                                            ),
+                                          );
+                                        case 4:
+                                          return const Text(
+                                            'Thu',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10,
+                                            ),
+                                          );
+                                        case 5:
+                                          return const Text(
+                                            'Fri',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10,
+                                            ),
+                                          );
+                                        case 6:
+                                          return const Text(
+                                            'Sat',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10,
+                                            ),
+                                          );
+                                        default:
+                                          return const SizedBox.shrink();
+                                      }
+                                    },
+                                  ),
+                                ),
+                                topTitles: const AxisTitles(
+                                  sideTitles: SideTitles(
+                                    showTitles: false,
+                                  ),
+                                ),
+                                rightTitles: const AxisTitles(
+                                  sideTitles: SideTitles(
+                                    showTitles: false,
+                                  ),
+                                ),
+                              ),
+                              borderData: FlBorderData(
+                                show: false,
+                              ),
+                              gridData: const FlGridData(
+                                show: false,
+                              ),
+                              barTouchData: BarTouchData(
+                                touchTooltipData: BarTouchTooltipData(
+                                  tooltipPadding: const EdgeInsets.all(8),
+                                  tooltipMargin: 8,
+                                  getTooltipItem:
+                                      (group, groupIndex, rod, rodIndex) {
+                                    return BarTooltipItem(
+                                      '${rod.toY} Visitors',
+                                      const TextStyle(
+                                        color: AppColors.white,
+                                        fontSize: 10,
+                                      ),
+                                    );
+                                  },
+                                ),
+                                handleBuiltInTouches: true,
+                              ),
+                              barGroups: [
+                                BarChartGroupData(
+                                  x: 0,
+                                  barRods: [
+                                    BarChartRodData(
+                                      toY: 8,
+                                      color: AppColors.primary.withOpacity(0.8),
+                                      width: 13,
+                                    ),
+                                  ],
+                                ),
+                                BarChartGroupData(
+                                  x: 1,
+                                  barRods: [
+                                    BarChartRodData(
+                                      toY: 12,
+                                      color: AppColors.primary.withOpacity(0.8),
+                                      width: 13,
+                                    ),
+                                  ],
+                                ),
+                                BarChartGroupData(
+                                  x: 2,
+                                  barRods: [
+                                    BarChartRodData(
+                                      toY: 16,
+                                      color: AppColors.primary.withOpacity(0.8),
+                                      width: 13,
+                                    ),
+                                  ],
+                                ),
+                                BarChartGroupData(
+                                  x: 3,
+                                  barRods: [
+                                    BarChartRodData(
+                                      toY: 12,
+                                      color: AppColors.primary.withOpacity(0.8),
+                                      width: 13,
+                                    ),
+                                  ],
+                                ),
+                                BarChartGroupData(
+                                  x: 4,
+                                  barRods: [
+                                    BarChartRodData(
+                                        toY: 16,
+                                        color: AppColors.primary.withOpacity(0.8),
+                                        width: 13,
+                                        backDrawRodData:
+                                            BackgroundBarChartRodData(
+                                          toY: 100,
+                                          color:
+                                              AppColors.primary.withOpacity(0.5),
+                                        )),
+                                  ],
+                                ),
+                                BarChartGroupData(
+                                  x: 5,
+                                  barRods: [
+                                    BarChartRodData(
+                                      toY: 10,
+                                      color: AppColors.primary.withOpacity(0.8),
+                                      width: 13,
+                                    ),
+                                  ],
+                                ),
+                                BarChartGroupData(
+                                  x: 6,
+                                  barRods: [
+                                    BarChartRodData(
+                                      toY: 13,
+                                      color: AppColors.primary.withOpacity(0.8),
+                                      width: 13,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              const SizedBox(height: 5.0),
+              const SizedBox(height: 10.0),
               const Text(
                 "Schedule",
                 style: TextStyle(
@@ -617,169 +653,192 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                   color: AppColors.primary,
                 ),
               ),
-              Card(
-                color: AppColors.white,
-                elevation: 1.0,
-                shadowColor: AppColors.darker,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(top: 10, right: 10, left: 10,),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Room Schedule',
-                            style: TextStyle(
-                              color: AppColors.primary,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Icon(
-                            Iconsax.calendar_1_outline,
-                            color: AppColors.primary,
-                          )
-                        ],
-                      ),
+              const SizedBox(height: 5.0),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: AppColors.mediumGrey,
+                      blurRadius: 10.0,
+                      spreadRadius: 1,
+                      offset: Offset(4, 4),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                      child: Text(
-                        'List of schedule for each day',
-                        style: TextStyle(
-                          color: AppColors.darkGrey
+                    BoxShadow(
+                      color: AppColors.lightGrey,
+                      blurRadius: 10.0,
+                      spreadRadius: 1,
+                      offset: Offset(-4,-4),
+                    ),
+                  ],
+                ),
+                child: Card(
+                  color: AppColors.white,
+                  elevation: 0,
+                  shadowColor: AppColors.darker,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(
+                          top: 10,
+                          right: 10,
+                          left: 10,
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 120,
-                      width: double.maxFinite,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 5.0, right: 10.0),
-                        child: Table(
-                          columnWidths: const <int, TableColumnWidth>{
-                            0: FlexColumnWidth(),
-                            1: FlexColumnWidth(),
-                          },
-                          defaultVerticalAlignment:
-                              TableCellVerticalAlignment.middle,
-                          children: const <TableRow>[
-                            TableRow(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(5.0),
-                                  child: Text(
-                                    'Monday - Thursday',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.all(5.0),
-                                  child: Text(
-                                    '7:00 am - 5:30 pm',
-                                    textAlign: TextAlign.end,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Room Schedule',
+                              style: TextStyle(
+                                color: AppColors.primary,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                            TableRow(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(5.0),
-                                  child: Text(
-                                    'Friday',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.all(5.0),
-                                  child: Text(
-                                    '7:00 am - 5:30 pm',
-                                    textAlign: TextAlign.end,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            TableRow(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(5.0),
-                                  child: Text(
-                                    'Saturday',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.all(5.0),
-                                  child: Text(
-                                    '7:00 am - 5:30 pm',
-                                    textAlign: TextAlign.end,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            TableRow(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(5.0),
-                                  child: Text(
-                                    'Sunday',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.all(5.0),
-                                  child: Text(
-                                    'No Schedule',
-                                    textAlign: TextAlign.end,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                            Icon(
+                              Iconsax.calendar_1_outline,
+                              color: AppColors.primary,
+                            )
                           ],
                         ),
                       ),
-                    ),
-                  ],
+                      const Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                        child: Text(
+                          'List of schedule for each day',
+                          style: TextStyle(color: AppColors.darkGrey),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 120,
+                        width: double.maxFinite,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 5.0, right: 10.0),
+                          child: Table(
+                            columnWidths: const <int, TableColumnWidth>{
+                              0: FlexColumnWidth(),
+                              1: FlexColumnWidth(),
+                            },
+                            defaultVerticalAlignment:
+                                TableCellVerticalAlignment.middle,
+                            children: const <TableRow>[
+                              TableRow(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Text(
+                                      'Monday - Thursday',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Text(
+                                      '7:00 am - 5:30 pm',
+                                      textAlign: TextAlign.end,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              TableRow(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Text(
+                                      'Friday',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Text(
+                                      '7:00 am - 5:30 pm',
+                                      textAlign: TextAlign.end,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              TableRow(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Text(
+                                      'Saturday',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Text(
+                                      '7:00 am - 5:30 pm',
+                                      textAlign: TextAlign.end,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              TableRow(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Text(
+                                      'Sunday',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Text(
+                                      'No Schedule',
+                                      textAlign: TextAlign.end,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(

@@ -42,13 +42,13 @@ class _HomeScreenState extends State<HomeScreen> {
       'id': 'f035c474-f8f2-4ac6-9a23-c821bc06323b',
       'name': 'USM Serials',
       'description': 'KEPLRC Serials',
-      'image': 'assets/images/section/reference.jpg',
+      'image': 'assets/images/section/2.jpg',
     },
     {
       'id': 'bb114cbb-cb6d-4668-b397-589fafdb71ed',
       'name': 'Information Technology',
       'description': 'KEPLRC IT Section',
-      'image': 'assets/images/section/reference.jpg',
+      'image': 'assets/images/section/3.jpg',
     },
   ];
 
@@ -63,9 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.maxFinite,
-      height: double.maxFinite,
-      padding: const EdgeInsets.symmetric(horizontal: 17.0, vertical: 10.0),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      padding: const EdgeInsets.all(15.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
             'Explore the library sections',
             style: TextStyle(
               color: AppColors.darkGrey,
-              fontSize: 15,
+              fontSize: 18,
             ),
           ),
           const SizedBox(
@@ -104,16 +104,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 10.0,
-                mainAxisExtent: 220.0,
+                mainAxisExtent: 215.0,
               ),
               itemCount: 6,
               itemBuilder: (context, index) {
-                return SectionItem(
-                  onPressed: _handleRedirectClick,
-                  sectionName: sectionItems.elementAt(index)['name'],
-                  sectionImage: sectionItems.elementAt(index)['image'],
-                  sectionDescription:
-                      sectionItems.elementAt(index)['description'],
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 5.0),
+                  child: SectionItem(
+                    onPressed: _handleRedirectClick,
+                    sectionName: sectionItems.elementAt(index)['name'],
+                    sectionImage: sectionItems.elementAt(index)['image'],
+                    sectionDescription:
+                        sectionItems.elementAt(index)['description'],
+                  ),
                 );
               },
             ),
