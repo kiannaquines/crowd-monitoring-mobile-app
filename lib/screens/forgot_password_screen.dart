@@ -1,3 +1,4 @@
+import 'package:crowd/screens/confirmation_email_screen.dart';
 import 'package:crowd/screens/login_screen.dart';
 import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,11 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   void sendEmail() {
-    debugPrint('Email sent');
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const ConfirmationEmailScreen(),
+      ),
+    );
   }
 
   void signInWithEmail() {
