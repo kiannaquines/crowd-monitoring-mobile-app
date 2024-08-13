@@ -6,7 +6,6 @@ import 'package:crowd/screens/register_screen.dart';
 import 'package:crowd/screens/forgot_password_screen.dart';
 import 'package:crowd/screens/main_screen.dart';
 import 'package:crowd/utils/colors.dart';
-import 'package:crowd/utils/utilities.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
