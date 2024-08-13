@@ -135,7 +135,11 @@ class MenuScreen extends StatelessWidget {
         onTap: onTap,
         child: ListTile(
           contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
-          leading: Icon(icon, color: AppColors.primary, size: 24),
+          leading: Icon(
+            icon,
+            color: AppColors.darker,
+            size: 24,
+          ),
           title: Text(
             title,
             style: const TextStyle(
