@@ -131,7 +131,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     children: <Widget>[
                       Expanded(
                         child: Divider(
-                          color: AppColors.primary,
+                          color: AppColors.darkGrey,
                         ),
                       ),
                       SizedBox(
@@ -151,7 +151,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                       Expanded(
                         child: Divider(
-                          color: AppColors.primary,
+                          color: AppColors.darkGrey,
                         ),
                       ),
                     ],

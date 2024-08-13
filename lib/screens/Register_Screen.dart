@@ -186,7 +186,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     children: <Widget>[
                       Expanded(
                         child: Divider(
-                          color: AppColors.primary,
+                          color: AppColors.darkGrey,
                         ),
                       ),
                       SizedBox(
@@ -206,7 +206,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       Expanded(
                         child: Divider(
-                          color: AppColors.primary,
+                          color: AppColors.darkGrey,
                         ),
                       ),
                     ],
