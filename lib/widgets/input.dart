@@ -22,6 +22,7 @@ class _InputWidgetState extends State<InputWidget> {
     return TextFormField(
       obscureText: type,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             width: 1.0,
@@ -49,6 +50,7 @@ class _InputWidgetState extends State<InputWidget> {
           color: AppColors.primary,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.auto,
+        floatingLabelAlignment: FloatingLabelAlignment.start,
         label: Text(
           title,
           style: const TextStyle(

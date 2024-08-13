@@ -54,213 +54,223 @@ class _LoginScreenState extends State<LoginScreen> {
         centerTitle: true,
         backgroundColor: AppColors.primary,
         title: const Text(
-          'Sign In',
+          'Start your journey',
           style: TextStyle(
             color: AppColors.white,
             fontWeight: FontWeight.w600,
           ),
         ),
       ),
-      body: Stack(children: <Widget>[
-        SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const Text(
-                "Start your college\njourney",
-                style: TextStyle(
-                  fontSize: Utilities.headingTextSize,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.primary,
-                ),
-              ),
-              const SizedBox(
-                height: Utilities.defaultHeight,
-              ),
-              const Text(
-                "Start creating an account",
-                style: TextStyle(
-                  fontSize: Utilities.paragraphSize,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.primary,
-                ),
-              ),
-              const SizedBox(
-                height: Utilities.defaultHeight,
-              ),
-              const InputWidget(
-                inputTitle: 'Email Address',
-                inputIcon: Iconsax.sms,
-                obscureText: false,
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              GestureDetector(
-                onTap: forgotPassword,
-                child: const Text(
-                  'Forgot Password?',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: AppColors.primary,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 5.0,
-              ),
-              const InputWidget(
-                inputTitle: 'Password',
-                inputIcon: Iconsax.lock,
-                obscureText: true,
-              ),
-              const SizedBox(
-                height: 2.0,
-              ),
-              Container(
-                padding: EdgeInsets.zero,
-                margin: EdgeInsets.zero,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Checkbox(
-                      value: isChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isChecked = value!;
-                        });
-                      },
-                      activeColor: AppColors.primary,
-                      checkColor: Colors.white,
-                    ),
-                    const Text(
-                      'Remember me',
-                      style: TextStyle(
-                        color: AppColors.primary,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 2.0,
-              ),
-              ButtonWidget(
-                buttonText: 'Sign In',
-                icon: Iconsax.login,
-                buttonTextColor: AppColors.white,
-                buttonColor: AppColors.primary,
-                action: logIn,
-              ),
-              const SizedBox(
-                height: 25.0,
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+      body: Stack(
+        children: <Widget>[
+          SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: SingleChildScrollView(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
                   const Text(
-                    'Dont have an account yet?',
-                    textAlign: TextAlign.center,
+                    "Sign In",
                     style: TextStyle(
-                      fontSize: 15.0,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
                       color: AppColors.primary,
-                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   const SizedBox(
-                    width: 5.0,
+                    height: 5.0,
+                  ),
+                  const Text(
+                    "Start authenticating your account",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  const InputWidget(
+                    inputTitle: 'Email Address',
+                    inputIcon: Iconsax.sms,
+                    obscureText: false,
+                  ),
+                  const SizedBox(
+                    height: 10.0,
                   ),
                   GestureDetector(
-                    onTap: signUpWithEmail,
+                    onTap: forgotPassword,
                     child: const Text(
-                      'Sign up',
-                      textAlign: TextAlign.center,
+                      'Forgot Password?',
+                      textAlign: TextAlign.right,
                       style: TextStyle(
                         fontSize: 15.0,
                         color: AppColors.primary,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 2.0,
+                  ),
+                  const InputWidget(
+                    inputTitle: 'Password',
+                    inputIcon: Iconsax.lock,
+                    obscureText: true,
+                  ),
+                  const SizedBox(
+                    height: 2.0,
+                  ),
+                  Container(
+                    padding: EdgeInsets.zero,
+                    margin: EdgeInsets.zero,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Checkbox(
+                          value: isChecked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked = value!;
+                            });
+                          },
+                          activeColor: AppColors.primary,
+                          checkColor: Colors.white,
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.values.last,
+                          visualDensity: VisualDensity.adaptivePlatformDensity,
+                        ),
+                        const Text(
+                          'Remember me',
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 2.0,
+                  ),
+                  ButtonWidget(
+                    buttonText: 'Sign In',
+                    icon: Iconsax.login,
+                    buttonTextColor: AppColors.white,
+                    buttonColor: AppColors.primary,
+                    action: logIn,
+                  ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text(
+                        'Dont have an account yet?',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5.0,
+                      ),
+                      GestureDetector(
+                        onTap: signUpWithEmail,
+                        child: const Text(
+                          'Sign up',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: AppColors.primary,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                  const Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: Divider(
+                          color: AppColors.darkGrey,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Text(
+                        'OR',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Expanded(
+                        child: Divider(
+                          color: AppColors.darkGrey,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                  ButtonWidget(
+                    buttonText: 'Sign In with Email',
+                    buttonColor: AppColors.darker,
+                    buttonTextColor: AppColors.white,
+                    icon: Icons.email,
+                    action: signUpWithEmail,
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  ButtonWidget(
+                    buttonText: 'Sign In with Facebook',
+                    buttonColor: AppColors.darker,
+                    buttonTextColor: AppColors.white,
+                    icon: Icons.facebook,
+                    action: signUpWithFacebook,
+                  ),
                 ],
               ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              const Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: Divider(
-                      color: AppColors.primary,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5.0,
-                  ),
-                  Text(
-                    'OR',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15.0,
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5.0,
-                  ),
-                  Expanded(
-                    child: Divider(
-                      color: AppColors.primary,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              ButtonWidget(
-                buttonText: 'Sign In with Email',
-                buttonColor: AppColors.darker,
-                buttonTextColor: AppColors.white,
-                icon: Icons.email,
-                action: signUpWithEmail,
-              ),
-              const SizedBox(
-                height: 15.0,
-              ),
-              ButtonWidget(
-                buttonText: 'Sign In with Facebook',
-                buttonColor: AppColors.darker,
-                buttonTextColor: AppColors.white,
-                icon: Icons.facebook,
-                action: signUpWithFacebook,
-              ),
-              const SizedBox(
-                height: 35.0,
-              ),
-              const Text(
-                'By signing in, you agree to our terms and \n conditions and privacy policy.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14.0,
-                  color: AppColors.primary,
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
-      ]),
+          const Positioned(
+            left: 0,
+            right: 0,
+            bottom: 16,
+            child: Text(
+              'Developed with ❤️ by the creator.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 14.0,
+                color: AppColors.primary,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

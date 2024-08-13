@@ -28,7 +28,7 @@ class ButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
         child: Container(
           width: double.infinity,
-          height: 55.0,
+          height: 46.0,
           decoration: BoxDecoration(
             color: buttonColor ?? colorScheme.primary,
           ),
@@ -55,8 +55,8 @@ class ButtonWidget extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: buttonTextColor,
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 17.0,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ],
