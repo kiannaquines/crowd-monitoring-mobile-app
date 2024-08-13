@@ -49,7 +49,12 @@ class MenuScreen extends StatelessWidget {
                       title: 'Favorite',
                       onTap: () => _handleItemTap(context, 'Favorite'),
                     ),
-                    _buildSectionHeader('Account Security'),
+                    _buildSectionHeader('Account & Security'),
+                    _buildMenuItem(
+                      icon: Iconsax.profile_2user_outline,
+                      title: 'My Profile',
+                      onTap: () => _handleItemTap(context, 'Profile'),
+                    ),
                     _buildMenuItem(
                       icon: Iconsax.security_safe_outline,
                       title: 'Security',
