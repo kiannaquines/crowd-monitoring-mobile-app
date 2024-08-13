@@ -53,7 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -70,7 +70,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 height: 5.0,
               ),
               const Text(
-                "Start by creating your first account.",
+                "Start by creating your first\naccount.",
                 style: TextStyle(
                   fontSize: 18.0,
                   color: AppColors.primary,

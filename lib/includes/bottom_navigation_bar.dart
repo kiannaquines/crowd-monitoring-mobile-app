@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:crowd/utils/colors.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu(
@@ -32,19 +32,19 @@ class _NavigationMenuState extends State<NavigationMenu> {
           destinations: const [
             NavigationDestination(
               icon: Icon(
-                Iconsax.home,
+                Iconsax.building_4_outline,
               ),
-              label: 'Home',
+              label: 'Library Room',
             ),
             NavigationDestination(
               icon: Icon(
-                Iconsax.heart,
+                Iconsax.save_2_outline,
               ),
-              label: 'Favorate',
+              label: 'Favorates',
             ),
             NavigationDestination(
               icon: Icon(
-                Iconsax.more,
+                Iconsax.more_2_outline,
               ),
               label: 'More',
             ),

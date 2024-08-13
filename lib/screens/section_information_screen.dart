@@ -1,7 +1,6 @@
 import 'package:crowd/widgets/button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:crowd/utils/colors.dart';
@@ -50,7 +49,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
             Navigator.pop(context);
           },
           icon: const Icon(
-            Iconsax.arrow_left,
+            Iconsax.arrow_left_outline,
             color: AppColors.white,
           ),
         ),
@@ -58,7 +57,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
           Padding(
             padding: EdgeInsets.all(15.0),
             child: Icon(
-              Iconsax.heart,
+              Iconsax.heart_outline,
               color: AppColors.white,
             ),
           ),
@@ -87,7 +86,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                 ),
                 itemBuilder: (ctx, index, realIdx) {
                   return ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+                    borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                     child: Stack(
                       children: [
                         Image.asset(
@@ -102,8 +101,12 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                AppColors.primary,
-                                AppColors.primary.withOpacity(0.1)
+                                AppColors.primary.withOpacity(
+                                  0.4,
+                                ),
+                                AppColors.primary.withOpacity(
+                                  0.1,
+                                )
                               ],
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter,
@@ -114,7 +117,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                           bottom: 10.0,
                           left: 10.0,
                           child: Text(
-                            'Reading Room',
+                            'Book Shelves Area',
                             style: TextStyle(
                               color: AppColors.white,
                               fontWeight: FontWeight.w500,
@@ -169,9 +172,8 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                 height: 5.0,
               ),
               Card(
-                color: colorScheme.onSecondary,
-                shadowColor: colorScheme.primary.withOpacity(0.5),
-                elevation: 0.0,
+                color: AppColors.white,
+                elevation: 1.0,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -194,10 +196,19 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                             ),
                           ),
                           Icon(
-                            Iconsax.activity,
+                            Iconsax.arrow_up_1_outline,
                             color: AppColors.primary,
                           )
                         ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                      child: Text(
+                        "Hourly visits for today",
+                        style: TextStyle(
+                          color: AppColors.darkGrey
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -300,8 +311,8 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                   const FlSpot(9, 13),
                                   const FlSpot(10, 40),
                                 ],
-                                isCurved: true,
-                                color: AppColors.primary,
+                                isCurved: false,
+                                color: AppColors.primary.withOpacity(0.8),
                                 barWidth: 4,
                                 isStrokeCapRound: true,
                                 dotData: const FlDotData(show: false),
@@ -350,7 +361,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
               ),
               Card(
                 color: AppColors.white,
-                elevation: 0.0,
+                elevation: 1.0,
                 shadowColor: colorScheme.primary.withOpacity(0.5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -374,10 +385,19 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                             ),
                           ),
                           Icon(
-                            Iconsax.activity,
+                            Iconsax.arrow_up_1_outline,
                             color: AppColors.primary,
                           )
                         ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                      child: Text(
+                        "Daily visits for today's week",
+                        style: TextStyle(
+                          color: AppColors.darkGrey
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -510,7 +530,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                 barRods: [
                                   BarChartRodData(
                                     toY: 8,
-                                    color: AppColors.primary,
+                                    color: AppColors.primary.withOpacity(0.8),
                                     width: 13,
                                   ),
                                 ],
@@ -520,7 +540,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                 barRods: [
                                   BarChartRodData(
                                     toY: 12,
-                                    color: AppColors.primary,
+                                    color: AppColors.primary.withOpacity(0.8),
                                     width: 13,
                                   ),
                                 ],
@@ -530,7 +550,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                 barRods: [
                                   BarChartRodData(
                                     toY: 16,
-                                    color: AppColors.primary,
+                                    color: AppColors.primary.withOpacity(0.8),
                                     width: 13,
                                   ),
                                 ],
@@ -540,7 +560,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                 barRods: [
                                   BarChartRodData(
                                     toY: 12,
-                                    color: AppColors.primary,
+                                    color: AppColors.primary.withOpacity(0.8),
                                     width: 13,
                                   ),
                                 ],
@@ -549,14 +569,15 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                 x: 4,
                                 barRods: [
                                   BarChartRodData(
-                                    toY: 16,
-                                    color: AppColors.primary,
-                                    width: 13,
-                                    backDrawRodData: BackgroundBarChartRodData(
-                                      toY: 100,
-                                      color: AppColors.primary.withOpacity(0.5),
-                                    )
-                                  ),
+                                      toY: 16,
+                                      color: AppColors.primary.withOpacity(0.8),
+                                      width: 13,
+                                      backDrawRodData:
+                                          BackgroundBarChartRodData(
+                                        toY: 100,
+                                        color:
+                                            AppColors.primary.withOpacity(0.5),
+                                      )),
                                 ],
                               ),
                               BarChartGroupData(
@@ -564,7 +585,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                 barRods: [
                                   BarChartRodData(
                                     toY: 10,
-                                    color: AppColors.primary,
+                                    color: AppColors.primary.withOpacity(0.8),
                                     width: 13,
                                   ),
                                 ],
@@ -574,7 +595,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                 barRods: [
                                   BarChartRodData(
                                     toY: 13,
-                                    color: AppColors.primary,
+                                    color: AppColors.primary.withOpacity(0.8),
                                     width: 13,
                                   ),
                                 ],
@@ -598,35 +619,39 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
               ),
               Card(
                 color: AppColors.white,
-                elevation: 0.0,
+                elevation: 1.0,
                 shadowColor: AppColors.darker,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Padding(
-                      padding: EdgeInsets.only(
-                        top: 10.0,
-                        bottom: 5.0,
-                        left: 10.0,
-                        right: 10.0,
-                      ),
+                      padding: EdgeInsets.only(top: 10, right: 10, left: 10,),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Reference Schedule',
+                            'Room Schedule',
                             style: TextStyle(
                               color: AppColors.primary,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           Icon(
-                            Iconsax.calendar,
+                            Iconsax.calendar_1_outline,
                             color: AppColors.primary,
                           )
                         ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                      child: Text(
+                        'List of schedule for each day',
+                        style: TextStyle(
+                          color: AppColors.darkGrey
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -649,7 +674,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                   child: Text(
                                     'Monday - Thursday',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 12,
                                       color: AppColors.primary,
                                     ),
@@ -661,7 +686,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                     '7:00 am - 5:30 pm',
                                     textAlign: TextAlign.end,
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w400,
                                       fontSize: 12,
                                       color: AppColors.primary,
                                     ),
@@ -676,7 +701,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                   child: Text(
                                     'Friday',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 12,
                                       color: AppColors.primary,
                                     ),
@@ -688,7 +713,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                     '7:00 am - 5:30 pm',
                                     textAlign: TextAlign.end,
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w400,
                                       fontSize: 12,
                                       color: AppColors.primary,
                                     ),
@@ -703,7 +728,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                   child: Text(
                                     'Saturday',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 12,
                                       color: AppColors.primary,
                                     ),
@@ -715,7 +740,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                     '7:00 am - 5:30 pm',
                                     textAlign: TextAlign.end,
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w400,
                                       fontSize: 12,
                                       color: AppColors.primary,
                                     ),
@@ -730,7 +755,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                   child: Text(
                                     'Sunday',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 12,
                                       color: AppColors.primary,
                                     ),
@@ -742,7 +767,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                                     'No Schedule',
                                     textAlign: TextAlign.end,
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w400,
                                       fontSize: 12,
                                       color: AppColors.primary,
                                     ),
@@ -764,7 +789,7 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
                 buttonText: 'You can go this hour',
                 buttonColor: AppColors.primary,
                 buttonTextColor: AppColors.white,
-                icon: Iconsax.check,
+                icon: Iconsax.emoji_happy_outline,
                 action: youCanGo,
               ),
             ],

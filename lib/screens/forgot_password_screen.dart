@@ -46,7 +46,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -55,7 +55,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 "Recover your account password",
                 style: TextStyle(
                   fontSize: 25.0,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   color: AppColors.primary,
                 ),
               ),
@@ -63,7 +63,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 height: 10.0,
               ),
               const Text(
-                "Enter your email address below and we'll send you a password.",
+                "Enter your email and we'll send you\na confirmation link.",
                 style: TextStyle(
                   fontSize: 18.0,
                   color: AppColors.primary,

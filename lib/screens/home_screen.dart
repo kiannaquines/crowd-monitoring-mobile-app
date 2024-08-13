@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:crowd/includes/search_input.dart';
 import 'package:crowd/includes/section_item.dart';
 import 'package:crowd/screens/section_information_screen.dart';
 import 'package:crowd/utils/colors.dart';
+import 'package:flutter/widgets.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -64,31 +65,38 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       width: double.maxFinite,
       height: double.maxFinite,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15.0,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 17.0, vertical: 10.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "Library Sections",
-            style: TextStyle(
-              fontSize: 26.0,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primary,
-            ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Library Sections',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.primary,
+                ),
+              ),
+              Icon(
+                Iconsax.building_4_outline,
+                color: AppColors.primary,
+                size: 24,
+              )
+            ],
           ),
           const Text(
-            'Explore your favorite sections with\nease and confidence',
+            'Explore the library sections',
             style: TextStyle(
               color: AppColors.darkGrey,
-              fontSize: 16.0,
-              fontWeight: FontWeight.w400,
+              fontSize: 15,
             ),
           ),
           const SizedBox(
-            height: 5.0,
+            height: 10.0,
           ),
           Expanded(
             child: GridView.builder(

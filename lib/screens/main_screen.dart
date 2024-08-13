@@ -1,7 +1,6 @@
 import 'package:crowd/screens/favorate_section_screen.dart';
 import 'package:crowd/screens/home_screen.dart';
 import 'package:crowd/screens/menu_screen.dart';
-import 'package:crowd/screens/section_schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/includes/bottom_navigation_bar.dart';
 import 'package:crowd/includes/top_navigation_bar.dart';
@@ -32,10 +31,8 @@ class _MainScreenState extends State<MainScreen> {
         bodyWidget = const HomeScreen();
         break;
       case 1:
-        bodyWidget = const SectionScreen(title: 'Section Schedule');
+        bodyWidget = const FavorateSectionScreen();
       case 2:
-        bodyWidget = const FavorateSectionScreen(title: 'Favorate Screen');
-      case 3:
         bodyWidget = const MenuScreen();
       default:
         bodyWidget = const HomeScreen();

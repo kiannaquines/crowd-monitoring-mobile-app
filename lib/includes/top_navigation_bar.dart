@@ -38,7 +38,7 @@ class _HeaderNavigationState extends State<HeaderNavigation> {
                   'Hello, ${widget.fullName}!',
                   style: const TextStyle(
                     fontSize: 16.0,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                     color: AppColors.white,
                   ),
                 ),

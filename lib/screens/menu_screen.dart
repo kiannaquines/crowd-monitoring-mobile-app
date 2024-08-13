@@ -1,6 +1,8 @@
 import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:icons_plus/icons_plus.dart';
+import 'package:crowd/screens/login_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -14,13 +16,23 @@ class MenuScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Menu',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.primary,
-                ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Explorers Menu',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                  Icon(
+                    IonIcons.apps,
+                    color: AppColors.primary,
+                    size: 24,
+                  )
+                ],
               ),
               const SizedBox(height: 10),
               Expanded(
@@ -28,35 +40,64 @@ class MenuScreen extends StatelessWidget {
                   children: [
                     _buildSectionHeader('General'),
                     _buildMenuItem(
-                      icon: Iconsax.home,
+                      icon: Iconsax.home_1_outline,
                       title: 'Home',
                       onTap: () => _handleItemTap(context, 'Home'),
                     ),
+                    _buildSectionHeader('Favorites'),
                     _buildMenuItem(
-                      icon: Iconsax.calendar,
-                      title: 'Schedule',
-                      onTap: () => _handleItemTap(context, 'Schedule'),
-                    ),
-                    _buildMenuItem(
-                      icon: Iconsax.heart,
+                      icon: Iconsax.heart_outline,
                       title: 'Favorite',
                       onTap: () => _handleItemTap(context, 'Favorite'),
                     ),
                     _buildSectionHeader('Accounts'),
                     _buildMenuItem(
-                      icon: Iconsax.security,
+                      icon: Iconsax.security_safe_outline,
                       title: 'Security',
                       onTap: () => _handleItemTap(context, 'Security'),
                     ),
                     _buildMenuItem(
-                      icon: Iconsax.setting,
+                      icon: Iconsax.setting_2_outline,
                       title: 'Settings',
                       onTap: () => _handleItemTap(context, 'Settings'),
                     ),
-                    _buildMenuItem(
-                      icon: Iconsax.logout,
-                      title: 'Logout',
-                      onTap: () => _handleLogout(context),
+                    _buildSectionHeader('Account Session'),
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 8.0),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.darkGrey.withOpacity(0.2),
+                            blurRadius: 6,
+                            offset: const Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: ListTile(
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 16.0),
+                        leading: const Icon(
+                          Iconsax.logout_outline,
+                          color: AppColors.white,
+                          size: 24,
+                        ),
+                        title: const Text(
+                          'Sign Out',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.white,
+                          ),
+                        ),
+                        trailing: const Icon(
+                          Iconsax.arrow_right_3_outline,
+                          color: AppColors.white,
+                          size: 20,
+                        ),
+                        onTap: () => _handleLogout(context),
+                      ),
                     ),
                   ],
                 ),
@@ -86,35 +127,37 @@ class MenuScreen extends StatelessWidget {
           ),
         ],
       ),
-      child: ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
-        leading: Icon(icon, color: AppColors.primary, size: 24),
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
-            color: AppColors.onBackground,
+      child: InkWell(
+        onTap: onTap,
+        child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
+          leading: Icon(icon, color: AppColors.primary, size: 24),
+          title: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              color: AppColors.darker,
+            ),
+          ),
+          trailing: const Icon(
+            HeroIcons.chevron_right,
+            color: AppColors.primary,
+            size: 20,
           ),
         ),
-        trailing: const Icon(
-          Iconsax.arrow_right_3,
-          color: AppColors.primary,
-          size: 20,
-        ),
-        onTap: onTap,
       ),
     );
   }
 
   Widget _buildSectionHeader(String title) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 7.0),
       child: Text(
         title,
         style: const TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
           color: AppColors.darkGrey,
         ),
       ),
@@ -136,7 +179,7 @@ class MenuScreen extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text(
-          'Logout',
+          'Signing Out?',
           style: TextStyle(
             color: AppColors.primary,
             fontWeight: FontWeight.bold,
@@ -156,14 +199,16 @@ class MenuScreen extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Logged out successfully')),
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => const LoginScreen(),
+                ),
               );
             },
             child: const Text(
               'Logout',
               style: TextStyle(
-                color: AppColors.error,
+                color: AppColors.primary,
               ),
             ),
           ),

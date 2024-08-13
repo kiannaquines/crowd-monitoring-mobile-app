@@ -24,6 +24,8 @@ class CrowdMonitoring extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: AppColors.primary,
       theme: ThemeData(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
           primary: AppColors.primary,

@@ -16,7 +16,7 @@ class _ConfirmationEmailScreenState extends State<ConfirmationEmailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
         child: SizedBox(
           width: double.infinity,
           height: double.maxFinite,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:crowd/utils/colors.dart';
 
 class SectionItem extends StatefulWidget {
@@ -27,7 +27,7 @@ class _SectionItemState extends State<SectionItem> {
     return ClipRRect(
       borderRadius: const BorderRadius.all(
         Radius.circular(
-          15,
+          10,
         ),
       ),
       child: GestureDetector(
@@ -46,13 +46,35 @@ class _SectionItemState extends State<SectionItem> {
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                   ),
-                  child: Image(
-                    height: 120,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      widget.sectionImage,
-                    ),
+                  child: Stack(
+                    children: [
+                      Image(
+                        height: 120,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          widget.sectionImage,
+                        ),
+                      ),
+                      Container(
+                          width: double.infinity,
+                          height: 120,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                AppColors.darker.withOpacity(
+                                  0.5,
+                                ),
+                                AppColors.darkGrey.withOpacity(
+                                  0.1,
+                                )
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
                 ),
               ),
@@ -113,16 +135,16 @@ class _SectionItemState extends State<SectionItem> {
                             debugPrint("favorate clicked");
                           },
                           icon: const Icon(
-                            Iconsax.star,
+                            Iconsax.heart_outline,
                             color: AppColors.primary,
                           ),
                         ),
                         IconButton(
                           onPressed: () {
-                            debugPrint("heart cliked");
+                            debugPrint("liked cliked");
                           },
                           icon: const Icon(
-                            Iconsax.heart,
+                            Iconsax.like_1_outline,
                             color: AppColors.primary,
                           ),
                         )
