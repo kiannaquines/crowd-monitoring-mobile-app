@@ -43,13 +43,13 @@ class MenuScreen extends StatelessWidget {
                       title: 'Home',
                       onTap: () => _handleItemTap(context, 'Home'),
                     ),
-                    _buildSectionHeader('Favorites'),
+                    _buildSectionHeader('My Favorites'),
                     _buildMenuItem(
                       icon: Iconsax.heart_outline,
                       title: 'Favorite',
                       onTap: () => _handleItemTap(context, 'Favorite'),
                     ),
-                    _buildSectionHeader('Accounts'),
+                    _buildSectionHeader('Account Security'),
                     _buildMenuItem(
                       icon: Iconsax.security_safe_outline,
                       title: 'Security',
