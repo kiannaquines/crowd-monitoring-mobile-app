@@ -46,7 +46,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       ),
       body: Stack(children: <Widget>[
         SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
