@@ -260,7 +260,7 @@ class _LoginScreenState extends State<LoginScreen> {
             right: 0,
             bottom: 16,
             child: Text(
-              'Developed with ❤️ by the creator.',
+              'Developed with ❤️ by the developer.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14.0,
