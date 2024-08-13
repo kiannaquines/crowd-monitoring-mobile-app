@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Icon(
                 Iconsax.building_4_outline,
                 color: AppColors.primary,
-                size: 24,
+                size: 30,
               )
             ],
           ),

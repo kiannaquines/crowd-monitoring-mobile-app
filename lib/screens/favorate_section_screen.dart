@@ -33,7 +33,7 @@ class FavorateSectionScreen extends StatelessWidget {
                     Icon(
                       Iconsax.save_2_outline,
                       color: AppColors.primary,
-                      size: 24,
+                      size: 30,
                     )
                   ],
                 ),

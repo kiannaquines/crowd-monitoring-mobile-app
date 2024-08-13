@@ -29,7 +29,7 @@ class MenuScreen extends StatelessWidget {
                   Icon(
                     IonIcons.apps,
                     color: AppColors.primary,
-                    size: 24,
+                    size: 30,
                   )
                 ],
               ),
