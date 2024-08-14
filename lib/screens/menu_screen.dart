@@ -1,4 +1,4 @@
-import 'package:crowd/screens/profile_screen.dart';
+import 'package:crowd/screens/update_profile_screen.dart';
 import 'package:crowd/screens/security_screen.dart';
 import 'package:crowd/screens/settings_screen.dart';
 import 'package:crowd/utils/colors.dart';

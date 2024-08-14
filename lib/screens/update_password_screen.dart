@@ -2,18 +2,16 @@ import 'package:crowd/widgets/button.dart';
 import 'package:crowd/widgets/input.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/utils/colors.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/widgets.dart';
 import 'package:icons_plus/icons_plus.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class UpdatePasswordScreen extends StatefulWidget {
+  const UpdatePasswordScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<UpdatePasswordScreen> createState() => _UpdatePasswordScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _UpdatePasswordScreenState extends State<UpdatePasswordScreen> {
   void actionButton() {
     debugPrint('Action Button Pressed');
   }
@@ -23,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: AppColors.lightGrey,
       appBar: AppBar(
-        backgroundColor: AppColors.primary.withOpacity(0.9),
+        backgroundColor: AppColors.primary,
         foregroundColor: AppColors.onPrimary,
         centerTitle: true,
         title: const Text(
@@ -48,8 +46,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                                
+              children: <Widget>[              
                 const Text(
                   'General Information',
                   style: TextStyle(
