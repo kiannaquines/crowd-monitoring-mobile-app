@@ -62,65 +62,67 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Library Sections',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.primary,
-                ),
-              ),
-              Icon(
-                Iconsax.building_4_outline,
-                color: AppColors.primary,
-                size: 30,
-              )
-            ],
-          ),
-          const Text(
-            'Explore the library sections',
-            style: TextStyle(
-              color: AppColors.darkGrey,
-              fontSize: 18,
-            ),
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Expanded(
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
-                mainAxisExtent: 215.0,
-              ),
-              itemCount: 6,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 5.0),
-                  child: SectionItem(
-                    onPressed: _handleRedirectClick,
-                    sectionName: sectionItems.elementAt(index)['name'],
-                    sectionImage: sectionItems.elementAt(index)['image'],
-                    sectionDescription:
-                        sectionItems.elementAt(index)['description'],
+    return Scaffold(
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Library Sections',
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.primary,
                   ),
-                );
-              },
+                ),
+                Icon(
+                  Iconsax.building_4_outline,
+                  color: AppColors.primary,
+                  size: 30,
+                )
+              ],
             ),
-          ),
-        ],
+            const Text(
+              'Explore the library sections',
+              style: TextStyle(
+                color: AppColors.darkGrey,
+                fontSize: 18,
+              ),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10.0,
+                  crossAxisSpacing: 10.0,
+                  mainAxisExtent: 215.0,
+                ),
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 5.0),
+                    child: SectionItem(
+                      onPressed: _handleRedirectClick,
+                      sectionName: sectionItems.elementAt(index)['name'],
+                      sectionImage: sectionItems.elementAt(index)['image'],
+                      sectionDescription:
+                          sectionItems.elementAt(index)['description'],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

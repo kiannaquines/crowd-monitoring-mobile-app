@@ -71,7 +71,7 @@ class MenuScreen extends StatelessWidget {
                       ),
                     );
                   },
-                ),
+                ),                
                 _buildSectionHeader('Account Session'),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 8.0),
@@ -90,12 +90,12 @@ class MenuScreen extends StatelessWidget {
                     contentPadding:
                         const EdgeInsets.symmetric(horizontal: 16.0),
                     leading: const Icon(
-                      Iconsax.logout_outline,
+                      Iconsax.logout_1_outline,
                       color: AppColors.white,
                       size: 24,
                     ),
                     title: const Text(
-                      'Sign Out',
+                      'Logout',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
