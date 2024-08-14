@@ -1,4 +1,6 @@
 import 'package:crowd/screens/profile_screen.dart';
+import 'package:crowd/screens/security_screen.dart';
+import 'package:crowd/screens/settings_screen.dart';
 import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -50,13 +52,25 @@ class MenuScreen extends StatelessWidget {
                 _buildMenuItem(
                   icon: Iconsax.setting_2_outline,
                   title: 'Settings',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const SettingsScreen(),
+                      ),
+                    );
+                  },
                 ),
                 _buildSectionHeader('Account & Security'),
                 _buildMenuItem(
                   icon: Iconsax.security_safe_outline,
                   title: 'Security',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const SecurityScreen(),
+                      ),
+                    );
+                  },
                 ),
                 _buildSectionHeader('Account Session'),
                 Container(

@@ -1,3 +1,4 @@
+import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -5,9 +6,15 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      child: Center(
-        child: Text('Settings Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.primary,
+        foregroundColor: AppColors.onPrimary,
+      ),
+      body: const SizedBox(
+        child: Center(
+          child: Text('Settings Screen'),
+        ),
       ),
     );
   }
