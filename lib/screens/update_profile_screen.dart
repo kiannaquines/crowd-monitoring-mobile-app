@@ -2,18 +2,16 @@ import 'package:crowd/widgets/button.dart';
 import 'package:crowd/widgets/input.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/utils/colors.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/widgets.dart';
 import 'package:icons_plus/icons_plus.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class UpdateProfileScreen extends StatefulWidget {
+  const UpdateProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<UpdateProfileScreen> createState() => _UpdateProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   void actionButton() {
     debugPrint('Action Button Pressed');
   }

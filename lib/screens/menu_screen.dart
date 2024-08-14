@@ -1,6 +1,6 @@
+import 'package:crowd/screens/profile_screen.dart';
 import 'package:crowd/screens/update_profile_screen.dart';
 import 'package:crowd/screens/security_screen.dart';
-import 'package:crowd/screens/settings_screen.dart';
 import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -39,10 +39,11 @@ class MenuScreen extends StatelessWidget {
               children: [
                 _buildSectionHeader('Account'),
                 _buildMenuItem(
-                  icon: Iconsax.profile_2user_outline,
-                  title: 'My Profile',
+                  icon: Iconsax.user_outline,
+                  title: 'Profile',
                   onTap: () {
-                    Navigator.of(context).push(
+                    Navigator.push(
+                      context,
                       MaterialPageRoute(
                         builder: (context) => const ProfileScreen(),
                       ),
@@ -50,28 +51,14 @@ class MenuScreen extends StatelessWidget {
                   },
                 ),
                 _buildMenuItem(
-                  icon: Iconsax.setting_2_outline,
-                  title: 'Settings',
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const SettingsScreen(),
-                      ),
-                    );
-                  },
-                ),
-                _buildSectionHeader('Account & Security'),
+                    icon: Iconsax.heart_outline,
+                    title: 'Favorites',
+                    onTap: () {}),
+                _buildSectionHeader('Settings'),
                 _buildMenuItem(
-                  icon: Iconsax.security_safe_outline,
-                  title: 'Security',
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const SecurityScreen(),
-                      ),
-                    );
-                  },
-                ),                
+                    icon: Iconsax.finger_scan_outline,
+                    title: 'Fingerprint',
+                    onTap: () {}),
                 _buildSectionHeader('Account Session'),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 8.0),
@@ -176,14 +163,6 @@ class MenuScreen extends StatelessWidget {
       ),
     );
   }
-
-  // void _handleItemTap(BuildContext context, itemName) {
-  //   Navigator.of(context).push(
-  //     MaterialPageRoute(
-  //       builder: (context) => itemName,
-  //     ),
-  //   );
-  // }
 
   void _handleLogout(BuildContext context) {
     showDialog(

@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
         centerTitle: true,
         backgroundColor: AppColors.primary,
         title: const Text(
-          'Start your journey',
+          'Sign In',
           style: TextStyle(
             color: AppColors.white,
             fontWeight: FontWeight.w600,
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Text(
-                    "Sign In",
+                    "Start your journey",
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,

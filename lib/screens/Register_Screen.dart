@@ -44,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         centerTitle: true,
         backgroundColor: AppColors.primary,
         title: const Text(
-          'Create an Account',
+          'Sign Up',
           style: TextStyle(
             color: AppColors.white,
             fontWeight: FontWeight.w600,
@@ -63,7 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Text(
-                    "Sign Up",
+                    "Create an Account",
                     style: TextStyle(
                       fontSize: 26.0,
                       fontWeight: FontWeight.bold,
