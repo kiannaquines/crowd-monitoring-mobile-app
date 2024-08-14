@@ -1,5 +1,3 @@
-import 'package:crowd/screens/favorate_section_screen.dart';
-import 'package:crowd/screens/home_screen.dart';
 import 'package:crowd/screens/profile_screen.dart';
 import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
