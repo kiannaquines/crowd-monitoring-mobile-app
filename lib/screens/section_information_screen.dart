@@ -32,7 +32,6 @@ class _SectioninformationScreenState extends State<SectioninformationScreen> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

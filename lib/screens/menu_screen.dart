@@ -1,3 +1,5 @@
+import 'package:crowd/screens/favorate_section_screen.dart';
+import 'package:crowd/screens/home_screen.dart';
 import 'package:crowd/screens/profile_screen.dart';
 import 'package:crowd/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -10,106 +12,96 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Explorers Menu',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.primary,
-                    ),
-                  ),
-                  Icon(
-                    IonIcons.apps,
-                    color: AppColors.primary,
-                    size: 30,
-                  )
-                ],
-              ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: ListView(
-                  children: [
-                    _buildSectionHeader('General'),
-                    _buildMenuItem(
-                      icon: Iconsax.home_1_outline,
-                      title: 'Home',
-                      onTap: () => _handleItemTap(context, 'Home'),
-                    ),
-                    _buildSectionHeader('My Favorites'),
-                    _buildMenuItem(
-                      icon: Iconsax.heart_outline,
-                      title: 'Favorite',
-                      onTap: () => _handleItemTap(context, 'Favorite'),
-                    ),
-                    _buildSectionHeader('Account & Security'),
-                    _buildMenuItem(
-                      icon: Iconsax.profile_2user_outline,
-                      title: 'My Profile',
-                      onTap: () => _handleItemTap(context, 'Profile'),
-                    ),
-                    _buildMenuItem(
-                      icon: Iconsax.security_safe_outline,
-                      title: 'Security',
-                      onTap: () => _handleItemTap(context, 'Security'),
-                    ),
-                    _buildMenuItem(
-                      icon: Iconsax.setting_2_outline,
-                      title: 'Settings',
-                      onTap: () => _handleItemTap(context, 'Settings'),
-                    ),
-                    _buildSectionHeader('Account Session'),
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 8.0),
-                      decoration: BoxDecoration(
-                        color: AppColors.primary,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.darkGrey.withOpacity(0.2),
-                            blurRadius: 6,
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: ListTile(
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 16.0),
-                        leading: const Icon(
-                          Iconsax.logout_outline,
-                          color: AppColors.white,
-                          size: 24,
-                        ),
-                        title: const Text(
-                          'Sign Out',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.white,
-                          ),
-                        ),
-                        trailing: const Icon(
-                          Iconsax.arrow_right_3_outline,
-                          color: AppColors.white,
-                          size: 20,
-                        ),
-                        onTap: () => _handleLogout(context),
-                      ),
-                    ),
-                  ],
+              Text(
+                'Explorers Menu',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.primary,
                 ),
               ),
+              Icon(
+                IonIcons.apps,
+                color: AppColors.primary,
+                size: 30,
+              )
             ],
           ),
-        ),
+          const SizedBox(height: 10),
+          Expanded(
+            child: ListView(
+              children: [
+                _buildSectionHeader('Account'),
+                _buildMenuItem(
+                  icon: Iconsax.profile_2user_outline,
+                  title: 'My Profile',
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ProfileScreen(),
+                      ),
+                    );
+                  },
+                ),
+                _buildMenuItem(
+                  icon: Iconsax.setting_2_outline,
+                  title: 'Settings',
+                  onTap: () {},
+                ),
+                _buildSectionHeader('Account & Security'),
+                _buildMenuItem(
+                  icon: Iconsax.security_safe_outline,
+                  title: 'Security',
+                  onTap: () {},
+                ),
+                _buildSectionHeader('Account Session'),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 8.0),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.darkGrey.withOpacity(0.2),
+                        blurRadius: 6,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: ListTile(
+                    contentPadding:
+                        const EdgeInsets.symmetric(horizontal: 16.0),
+                    leading: const Icon(
+                      Iconsax.logout_outline,
+                      color: AppColors.white,
+                      size: 24,
+                    ),
+                    title: const Text(
+                      'Sign Out',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.white,
+                      ),
+                    ),
+                    trailing: const Icon(
+                      Iconsax.arrow_right_3_outline,
+                      color: AppColors.white,
+                      size: 20,
+                    ),
+                    onTap: () => _handleLogout(context),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -173,13 +165,13 @@ class MenuScreen extends StatelessWidget {
     );
   }
 
-  void _handleItemTap(BuildContext context, String itemName) {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => const ProfileScreen(),
-      ),
-    );
-  }
+  // void _handleItemTap(BuildContext context, itemName) {
+  //   Navigator.of(context).push(
+  //     MaterialPageRoute(
+  //       builder: (context) => itemName,
+  //     ),
+  //   );
+  // }
 
   void _handleLogout(BuildContext context) {
     showDialog(
@@ -206,7 +198,7 @@ class MenuScreen extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.of(context).pushReplacement(
+              Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const LoginScreen(),
                 ),

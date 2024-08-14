@@ -43,7 +43,10 @@ class _MainScreenState extends State<MainScreen> {
         title: 'Good evening 🌙',
         fullName: 'Kian Naquines',
       ),
-      body: bodyWidget,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+        child: bodyWidget,
+      ),
       bottomNavigationBar: NavigationMenu(
         currentIndexPage: currentIndex,
         destinationPage: onChangePage,
