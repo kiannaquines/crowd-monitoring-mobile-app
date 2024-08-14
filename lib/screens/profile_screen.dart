@@ -1,3 +1,5 @@
+import 'package:crowd/widgets/button.dart';
+import 'package:crowd/widgets/input.dart';
 import 'package:flutter/material.dart';
 import 'package:crowd/utils/colors.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -18,223 +20,153 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.onPrimary,
-          centerTitle: true,
-          title: const Text(
-            'Profile',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
+    return Scaffold(
+      backgroundColor: AppColors.lightGrey,
+      appBar: AppBar(
+        backgroundColor: AppColors.primary.withOpacity(0.9),
+        foregroundColor: AppColors.onPrimary,
+        centerTitle: true,
+        title: const Text(
+          'Profile',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
           ),
-          actions: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.share,
-              ),
-            )
-          ],
         ),
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Stack(
-                        alignment: Alignment.bottomRight,
-                        children: [
-                          CircleAvatar(
-                            radius: 70,
-                            child: Container(
-                              width: 140,
-                              height: 140,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: AppColors.primary,
-                                  width: 5.0,
-                                ),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(100),
-                                ),
-                                child: CachedNetworkImage(
-                                  imageUrl:
-                                      'https://avatars.githubusercontent.com/u/88887528?v=4',
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) => const Center(
-                                    child: CircularProgressIndicator(),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            right: 15,
-                            child: CircleAvatar(
-                              radius: 15,
-                              child: SizedBox(
-                                child: IconButton(
-                                  onPressed: () {
-                                    debugPrint('Edit Button Pressed');
-                                  },
-                                  tooltip: 'Edit your profile',
-                                  iconSize: 15,
-                                  icon: const Icon(
-                                    Icons.edit,
-                                    color: AppColors.onPrimary,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      const Text(
-                        'Kian G. Naquines',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.primary,
-                        ),
-                      ),
-                      const Text(
-                        '@kiannaquines',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.primary,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      const Padding(
-                        padding: EdgeInsets.all(15.0),
-                        child: TabBar(
-                          labelColor: AppColors.primary,
-                          unselectedLabelColor: Colors.grey,
-                          indicatorColor: AppColors.primary,
-                          dividerColor: AppColors.lightGrey,
-                          indicatorWeight: 4,
-                          tabs: [
-                            Tab(
-                              icon: Icon(
-                                Iconsax.home_1_outline,
-                              ),
-                              text: 'My Info',
-                            ),
-                            Tab(
-                              icon: Icon(
-                                Iconsax.heart_outline,
-                              ),
-                              text: 'Favorites',
-                            ),
-                            Tab(
-                              icon: Icon(
-                                Iconsax.finger_scan_outline,
-                              ),
-                              text: 'Fingerprint',
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.share,
+            ),
+          )
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+        child: SingleChildScrollView(
+          child: Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                                
+                const Text(
+                  'General Information',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.primary,
                   ),
                 ),
-              ),
-            ),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'Informations',
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.primary,
-                            ),
-                          ),
-                          Text(
-                            'Name',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.primary,
-                            ),
-                          ),
-                          Text(
-                            'Kian Jearard G. Naquines',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.darkGrey,
-                            ),
-                          ),
-                          Text(
-                            'Username',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.primary,
-                            ),
-                          ),
-                          Text(
-                            'kiannaquines.09',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.darkGrey,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            'Email Address',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.primary,
-                            ),
-                          ),
-                          Text(
-                            'kiannaquines@gmail.com',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.darkGrey,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                        ],
-                      ),
-                    ),
+                const SizedBox(height: 10),
+                const InputWidget(
+                    inputTitle: 'Firstname',
+                    inputIcon: Iconsax.user_add_outline,
+                    obscureText: false),
+                const SizedBox(
+                  height: 15,
+                ),
+                const InputWidget(
+                    inputTitle: 'Lastname',
+                    inputIcon: Iconsax.user_add_outline,
+                    obscureText: false),
+                const SizedBox(
+                  height: 15,
+                ),
+                const Text(
+                  'Account Details',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.primary,
                   ),
-                  const Center(child: Text('Favorites Page Content')),
-                  const Center(child: Text('Settings Page Content')),
-                ],
-              ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const InputWidget(
+                    inputTitle: 'Username',
+                    inputIcon: Iconsax.user_add_outline,
+                    obscureText: false),
+                const SizedBox(
+                  height: 15,
+                ),
+                const InputWidget(
+                    inputTitle: 'Email Address',
+                    inputIcon: Iconsax.user_add_outline,
+                    obscureText: false),
+                const SizedBox(height: 15),
+                const Text(
+                  'Password',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.primary,
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const InputWidget(
+                    inputTitle: 'Password',
+                    inputIcon: Icons.password_outlined,
+                    obscureText: false),
+                const SizedBox(
+                  height: 15,
+                ),
+                const InputWidget(
+                    inputTitle: 'Confirm Password',
+                    inputIcon: Icons.password_outlined,
+                    obscureText: false),
+                const SizedBox(height: 15),
+                ButtonWidget(
+                  buttonText: 'Update Profile',
+                  buttonColor: AppColors.primary,
+                  buttonTextColor: AppColors.onPrimary,
+                  action: actionButton,
+                  icon: Iconsax.edit_outline,
+                )
+              ],
             ),
-          ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildInfoItem({required String title, required String content}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(
+                Iconsax.info_circle_outline,
+                color: AppColors.primary,
+                size: 15.0,
+              ),
+              const SizedBox(width: 8.0),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                ),
+              ),
+            ],
+          ),
+          Text(
+            content,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              color: AppColors.darkGrey,
+            ),
+          ),
+        ],
       ),
     );
   }
