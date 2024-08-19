@@ -1,4 +1,4 @@
-# Crowd Monitoring Mobile Application
+# Crowd Monitoring App
 
 A mobile based application for real-time update of library users density in a library.
 
